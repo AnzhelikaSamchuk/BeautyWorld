@@ -5,3 +5,52 @@ html {
 *, *:before, *:after {
 	box-sizing: inherit;
 }
+
+body {
+	color: #333333;
+	font: 20px "Regular", sans-serif; /*без засечек*/
+}
+
+.header__container {
+	max-width: 1110px;
+	margin: auto; /*по центру*/
+}
+
+.header {
+	background-image: url('./images/bc.jpg');
+	/*padding: 56px 0 140px;*/
+}
+
+ /*header__top*/
+
+.header__top .logo {
+	color: #333333;
+	font: 24px "Bold", sans-serif; /*без засечек*/
+	text-decoration: none;
+	display: inline-block;
+}
+
+.navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+.navigation li:not(:last-child) {
+	margin-right: 28px;
+}
+
+.navigation li a:hover {
+	color: #00BF78;
+	text-decoration: underline;
+}
+
+.navigation a {
+	color: #333333;
+	text-decoration: none;
+	font: 14px "Medium", sans-serif; /*без засечек*/
+}
+
+
