@@ -15,7 +15,9 @@ body {
 
 .header__container {
 	max-width: 1110px;
+	min-height: 591px;
 	margin: auto; /*по центру*/
+	position: relative;
 }
 
 .header {
@@ -28,6 +30,18 @@ body {
 	outline: 0;
 	cursor: pointer;
 	color: #fff;
+	font: 14px "Medium", sans-serif; /*без засечек*/
+	padding: 17px 30px;
+	border-radius: 60px;
+	transition: .15s background-color;
+}
+
+.btn:hover {
+	background-color: #ef8160;
+}
+
+.btn:active {
+	background-color: #f3724a;
 }
 
 /*Верхняя панель*/
@@ -95,3 +109,36 @@ body {
 	margin: 0;
 }
 
+.btn__hero {
+	width: 203px;
+	height: 48px;
+}
+
+/*Hero__frame*/
+.hero__frame ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.hero__frame li:not(:last-child) {
+	margin-bottom: 16px;
+}
+
+.img {
+	position: absolute;
+	bottom: 0;
+	right: 256px;
+	z-index: 2;
+}
+
+.hero__circle {
+	position: absolute;
+	width: 472px;
+	height: 472px;
+	border-radius: 50%;
+	bottom: -110px;
+	right: 256px;
+	background-color: #FB9475;
+	z-index: 1;
+}
