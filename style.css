@@ -2,7 +2,9 @@ html {
 	box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: inherit;
 }
 
@@ -17,11 +19,18 @@ body {
 }
 
 .header {
-	background-image: url('./images/bc.jpg');
-	/*padding: 56px 0 140px;*/
+	background-image: url("./images/bc.jpg");
 }
 
- /*header__top*/
+.btn {
+	border: none;
+	background-color: #FB9475;
+	outline: 0;
+	cursor: pointer;
+	color: #fff;
+}
+
+/*Верхняя панель*/
 
 .header__top .logo {
 	color: #333333;
@@ -43,7 +52,7 @@ body {
 }
 
 .navigation li a:hover {
-	color: #00BF78;
+	color: #00bf78;
 	text-decoration: underline;
 }
 
@@ -53,4 +62,36 @@ body {
 	font: 14px "Medium", sans-serif; /*без засечек*/
 }
 
+.information {
+	position: relative;
+	width: 167px;
+	height: 36px;
+}
+.phone {
+	position: absolute;
+	width: 100%;
+	font: 18px "Medium", sans-serif; /*без засечек*/
+	text-align: center;
+}
+
+.text {
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	font: 11px "Regular", sans-serif; /*без засечек*/
+	text-align: right;
+	padding: 22px 0 0 0;
+}
+
+/*Hero*/
+
+.hero__title {
+	font: 48px "SemiBold", sans-serif; /*без засечек*/
+	margin: 0;
+}
+
+.hero__subtitle {
+	font: 20px "Regular", sans-serif; /*без засечек*/
+	margin: 0;
+}
 
