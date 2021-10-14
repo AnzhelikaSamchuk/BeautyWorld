@@ -13,27 +13,35 @@ body {
 	font: 20px "Regular", sans-serif; /*без засечек*/
 }
 
-.header__container {
-	max-width: 1110px;
-	min-height: 591px;
-	margin: auto; /*по центру*/
-	position: relative;
-}
-
 .header {
 	background-image: url("./images/bc.jpg");
 }
 
+.header__container {
+	position: relative;
+	max-width: 1110px;
+	min-height: 591px;
+	/*margin: auto; /*по центру*/
+	margin: 30px auto 130px;
+}
+
+.header__top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 0 0 120px 0;
+}
+
 .btn {
 	border: none;
-	background-color: #FB9475;
+	background-color: #fb9475;
 	outline: 0;
 	cursor: pointer;
 	color: #fff;
 	font: 14px "Medium", sans-serif; /*без засечек*/
 	padding: 17px 30px;
 	border-radius: 60px;
-	transition: .15s background-color;
+	transition: 0.15s background-color;
 }
 
 .btn:hover {
@@ -85,7 +93,7 @@ body {
 	position: absolute;
 	width: 100%;
 	font: 18px "Medium", sans-serif; /*без засечек*/
-	text-align: center;
+	text-align: right;
 }
 
 .text {
@@ -101,12 +109,13 @@ body {
 
 .hero__title {
 	font: 48px "SemiBold", sans-serif; /*без засечек*/
-	margin: 0;
+	margin: 0px 0px 16px;
+	width: 50%;
 }
 
 .hero__subtitle {
 	font: 20px "Regular", sans-serif; /*без засечек*/
-	margin: 0;
+	margin: 0px 0px 60px;
 }
 
 .btn__hero {
@@ -116,9 +125,12 @@ body {
 
 /*Hero__frame*/
 .hero__frame ul {
+	position: absolute;
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	top: 207px;
+	right: 0px;
 }
 
 .hero__frame li:not(:last-child) {
@@ -139,6 +151,8 @@ body {
 	border-radius: 50%;
 	bottom: -110px;
 	right: 256px;
-	background-color: #FB9475;
+	background-color: #fb9475;
 	z-index: 1;
 }
+
+/*Main*/
