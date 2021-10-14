@@ -8,6 +8,27 @@ html {
 	box-sizing: inherit;
 }
 
+html,
+body,
+.wrapper {
+	height: 100%;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+}
+
+.wrapper .main {
+	flex: 1; /*Растягивается на все простроанство по высоте*/
+}
+
+.header,
+.footer {
+	flex-shrink: 0; /*не будет сжиматься*/
+}
+
 body {
 	color: #333333;
 	font: 20px "Regular", sans-serif; /*без засечек*/
@@ -15,14 +36,15 @@ body {
 
 .header {
 	background-image: url("./images/bc.jpg");
+	overflow: hidden; /*Чтобы часть круга, которая вылезала скрылась!*/
 }
 
 .header__container {
 	position: relative;
 	max-width: 1110px;
 	min-height: 591px;
-	/*margin: auto; /*по центру*/
-	margin: 30px auto 130px;
+	margin: auto;
+	padding: 30px 0 130px 0;
 }
 
 .header__top {
@@ -40,7 +62,7 @@ body {
 	color: #fff;
 	font: 14px "Medium", sans-serif; /*без засечек*/
 	padding: 17px 30px;
-	border-radius: 60px;
+	border-radius: 24px;
 	transition: 0.15s background-color;
 }
 
@@ -140,8 +162,8 @@ body {
 .img {
 	position: absolute;
 	bottom: 0;
-	right: 256px;
-	z-index: 2;
+	right: 120px;
+	z-index: 1;
 }
 
 .hero__circle {
@@ -150,9 +172,35 @@ body {
 	height: 472px;
 	border-radius: 50%;
 	bottom: -110px;
-	right: 256px;
+	right: 120px;
 	background-color: #fb9475;
-	z-index: 1;
 }
 
 /*Main*/
+.main__video {
+	width: 445px;
+	height: 295px;
+	border-radius: 8px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.main__video::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	background: #000;
+	opacity: 20%;
+}
+
+/*Footer*/
+/*.footer {
+	position: fixed;
+	background-color: aqua;
+	/*z-index: 4;
+}*/
