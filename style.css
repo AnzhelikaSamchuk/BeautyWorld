@@ -42,7 +42,7 @@ body {
 .header__container {
 	position: relative;
 	max-width: 1110px;
-	min-height: 591px;
+	max-height: 591px;
 	margin: auto;
 	padding: 30px 0 130px 0;
 }
@@ -177,14 +177,44 @@ body {
 }
 
 /*Main*/
+
+.main__container {
+	max-width: 1110px;
+	max-height: 393px;
+	margin: auto;
+	background-color: #fb9475;
+	position: relative;
+}
+
+.main__title {
+	margin: 0;
+	font: 48px "Bold", sans-serif; /*без засечек*/
+	padding-bottom: 32px;
+}
+
+
+
+
+
+
+
 .main__video {
 	width: 445px;
 	height: 295px;
 	border-radius: 8px;
 	background-position: center;
-	background-size: cover;
+	background-size: cover; /*полное покрытие размера своего родителя*/
 	background-repeat: no-repeat;
 	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.main__video:hover .main__video-action {
+	transform: scale(1.1);
 }
 
 .main__video::before {
@@ -198,9 +228,26 @@ body {
 	opacity: 20%;
 }
 
-/*Footer*/
-/*.footer {
-	position: fixed;
-	background-color: aqua;
-	/*z-index: 4;
-}*/
+.main__video-action {
+	font: 16px "Medium", sans-serif;
+	color: #fff;
+	position: relative;
+	transition: .4s;
+}
+
+.main__video-action::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	width: 62px;
+	height: 62px;
+	margin: 0 auto;
+	padding-top: 68px;
+	background: url("./images/iconPlay.svg");
+	background-repeat: no-repeat;
+}
+
+
