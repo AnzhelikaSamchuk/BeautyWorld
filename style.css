@@ -178,34 +178,55 @@ body {
 
 /*Main*/
 
-.main__container {
+.main__top {
 	max-width: 1110px;
-	max-height: 393px;
+	min-height: 493px;
 	margin: auto;
-	background-color: #fb9475;
+	padding: 100px 0;
 	position: relative;
+}
+
+.main__toptitle {
+	width: 42%;
 }
 
 .main__title {
 	margin: 0;
 	font: 48px "Bold", sans-serif; /*без засечек*/
 	padding-bottom: 32px;
+	font-weight: bold;
 }
 
+.main__subtitle {
+	margin: 0;
+	padding-bottom: 16px;
+	font: 20px "Regular", sans-serif; /*без засечек*/
+	line-height: 32px;
+}
 
+.main__desc {
+	margin: 0;
+	font: 16px "Regular", sans-serif; /*без засечек*/
+	padding-bottom: 14px;
+	line-height: 26px;
+}
 
-
-
-
+main a {
+	color: #278AFF;
+	text-decoration: none;
+	font: 14px "Regular", sans-serif; /*без засечек*/
+}
 
 .main__video {
+	position: absolute;
+	top: 0;
+	right: 0;
 	width: 445px;
 	height: 295px;
 	border-radius: 8px;
 	background-position: center;
 	background-size: cover; /*полное покрытие размера своего родителя*/
 	background-repeat: no-repeat;
-	position: relative;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
@@ -220,8 +241,6 @@ body {
 .main__video::before {
 	content: '';
 	position: absolute;
-	left: 0;
-	bottom: 0;
 	top: 0;
 	right: 0;
 	background: #000;
@@ -238,8 +257,6 @@ body {
 .main__video-action::before {
 	content: '';
 	position: absolute;
-	left: 0;
-	bottom: 0;
 	top: 0;
 	right: 0;
 	width: 62px;
