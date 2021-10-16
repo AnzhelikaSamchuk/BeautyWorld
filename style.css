@@ -79,6 +79,7 @@ body {
 .header__top .logo {
 	color: #333333;
 	font: 24px "Bold", sans-serif; /*без засечек*/
+	font-weight: bold;
 	text-decoration: none;
 	display: inline-block;
 }
@@ -131,6 +132,7 @@ body {
 
 .hero__title {
 	font: 48px "SemiBold", sans-serif; /*без засечек*/
+	font-weight: bold;
 	margin: 0px 0px 16px;
 	width: 50%;
 }
@@ -275,3 +277,38 @@ main a:hover {
 }
 
 /*Benefits*/
+.main__benefits {
+	max-width: 1110px;
+	min-height: 176px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.main__benefits-frame {
+	min-width: 350px;
+}
+
+.main__benefits-svg {
+	/*text-align: center;*/
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.main__behefits-title {
+	margin: 0;
+	text-align: center;
+	font: 18px "SemiBold", sans-serif;
+	font-weight: bold;
+	padding-bottom: 12px;
+}
+
+.main__behefits-subtitle {
+	margin: 0 auto;
+	text-align: center;
+	max-width: 263px;
+	font: 14px "Regular", sans-serif;
+	line-height: 22px;
+}
+
