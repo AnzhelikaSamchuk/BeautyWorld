@@ -68,6 +68,7 @@ body {
 
 .btn:hover {
 	background-color: #ef8160;
+	transform: scale(1.1);
 }
 
 .btn:active {
@@ -159,6 +160,10 @@ body {
 
 .hero__frame li:not(:last-child) {
 	margin-bottom: 16px;
+}
+
+.hero__frame li:hover {
+	transform: scale(1.3);
 }
 
 .img {
@@ -271,7 +276,6 @@ main a:hover {
 	left: 31%;
 	width: 62px;
 	height: 62px;
-
 	background: url("./images/iconPlay.svg");
 	background-repeat: no-repeat;
 }
@@ -290,7 +294,6 @@ main a:hover {
 }
 
 .main__benefits-svg {
-	/*text-align: center;*/
 	display: block;
 	margin: 0 auto;
 	padding-bottom: 20px;
@@ -313,3 +316,48 @@ main a:hover {
 }
 
 /*Footer*/
+.footer {
+	font: 12px "Regular", sans-serif;
+}
+
+.footer__container {
+	max-width: 1110px;
+	min-height: 78px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__title span {
+	display: inline-block;
+	padding-bottom: 8px;
+}
+
+.footer__navigation ul {
+	margin: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+.footer__navigation li:not(:last-child) {
+	margin-right: 28px;
+}
+
+.footer__title a {
+	color: #278aff;
+}
+
+.footer__title a:hover {
+	color: #083b79;
+}
+
+.footer__navigation a {
+	text-decoration: none;
+	color: #333333;
+}
+
+.footer__navigation a:hover {
+	color: #000000;
+}
