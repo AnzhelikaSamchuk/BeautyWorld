@@ -212,14 +212,18 @@ body {
 }
 
 main a {
-	color: #278AFF;
+	color: #278aff;
 	text-decoration: none;
 	font: 14px "Regular", sans-serif; /*без засечек*/
 }
 
+main a:hover {
+	color: #083b79;
+}
+
 .main__video {
 	position: absolute;
-	top: 0;
+	top: 100px;
 	right: 0;
 	width: 445px;
 	height: 295px;
@@ -229,6 +233,7 @@ main a {
 	background-repeat: no-repeat;
 	overflow: hidden;
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
@@ -239,10 +244,12 @@ main a {
 }
 
 .main__video::before {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
 	right: 0;
+	left: 0;
+	bottom: 0;
 	background: #000;
 	opacity: 20%;
 }
@@ -251,20 +258,20 @@ main a {
 	font: 16px "Medium", sans-serif;
 	color: #fff;
 	position: relative;
-	transition: .4s;
+	transition: 0.4s;
+	padding-top: 75px;
 }
 
 .main__video-action::before {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 31%;
 	width: 62px;
 	height: 62px;
-	margin: 0 auto;
-	padding-top: 68px;
+
 	background: url("./images/iconPlay.svg");
 	background-repeat: no-repeat;
 }
 
-
+/*Benefits*/
