@@ -31,7 +31,8 @@ body,
 
 body {
 	color: #333333;
-	font: 20px "Regular", sans-serif; /*без засечек*/
+	font: 20px "Montserrat", sans-serif;
+	font-weight: 400;
 }
 
 .header {
@@ -39,11 +40,13 @@ body {
 	overflow: hidden; /*Чтобы часть круга, которая вылезала скрылась!*/
 }
 
+.container {
+	max-width: 1110px;
+	margin: auto;
+}
+
 .header__container {
 	position: relative;
-	max-width: 1110px;
-	max-height: 591px;
-	margin: auto;
 	padding: 30px 0 130px 0;
 }
 
@@ -60,7 +63,9 @@ body {
 	outline: 0;
 	cursor: pointer;
 	color: #fff;
-	font: 14px "Medium", sans-serif; /*без засечек*/
+	font-weight: 500; /*Medium*/
+	font-size: 14px;
+	line-height: 14px;
 	padding: 17px 30px;
 	border-radius: 24px;
 	transition: 0.15s background-color;
@@ -79,8 +84,8 @@ body {
 
 .header__top .logo {
 	color: #333333;
-	font: 24px "Bold", sans-serif; /*без засечек*/
 	font-weight: bold;
+	font-size: 24px;
 	text-decoration: none;
 	display: inline-block;
 }
@@ -105,7 +110,8 @@ body {
 .navigation a {
 	color: #333333;
 	text-decoration: none;
-	font: 14px "Medium", sans-serif; /*без засечек*/
+	font-weight: 500; /*Medium*/
+	font-size: 14px;
 }
 
 .information {
@@ -113,18 +119,30 @@ body {
 	width: 167px;
 	height: 36px;
 }
-.phone {
+
+.information__phone,
+.information__text {
+	line-height: 14px;
+}
+
+.information__phone {
 	position: absolute;
 	width: 100%;
-	font: 18px "Medium", sans-serif; /*без засечек*/
+	font-weight: 500; /*Medium*/
+	font-size: 18px;
 	text-align: right;
 }
 
-.text {
+.information a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.information__text {
 	position: absolute;
 	display: inline-block;
 	width: 100%;
-	font: 11px "Regular", sans-serif; /*без засечек*/
+	font-size: 11px;
 	text-align: right;
 	padding: 22px 0 0 0;
 }
@@ -132,14 +150,13 @@ body {
 /*Hero*/
 
 .hero__title {
-	font: 48px "SemiBold", sans-serif; /*без засечек*/
-	font-weight: bold;
+	font-weight: 600; /*SemiBold*/
+	font-size: 48px;
 	margin: 0px 0px 16px;
 	width: 50%;
 }
 
 .hero__subtitle {
-	font: 20px "Regular", sans-serif; /*без засечек*/
 	margin: 0px 0px 60px;
 }
 
@@ -166,10 +183,13 @@ body {
 	transform: scale(1.3);
 }
 
-.img {
+.hero__img::before {
+	content: url("./images/woman.png");
 	position: absolute;
-	bottom: 0;
-	right: 120px;
+	top: 14%;
+	left: 45%;
+	width: 62px;
+	height: 62px;
 	z-index: 1;
 }
 
@@ -179,41 +199,36 @@ body {
 	height: 472px;
 	border-radius: 50%;
 	bottom: -110px;
-	right: 120px;
+	right: 96px;
 	background-color: #fb9475;
 }
 
 /*Main*/
 
-.main__top {
-	max-width: 1110px;
-	min-height: 493px;
-	margin: auto;
-	padding: 100px 0;
-	position: relative;
-}
-
-.main__toptitle {
-	width: 42%;
-}
-
 .main__title {
 	margin: 0;
-	font: 48px "Bold", sans-serif; /*без засечек*/
+	font-weight: bold;
+	font-size: 48px;
+	padding-top: 100px;
 	padding-bottom: 32px;
 	font-weight: bold;
+	font-size: 48px;
+}
+
+.main__top {
+	padding-bottom: 100px;
+	position: relative;
 }
 
 .main__subtitle {
 	margin: 0;
 	padding-bottom: 16px;
-	font: 20px "Regular", sans-serif; /*без засечек*/
 	line-height: 32px;
 }
 
 .main__desc {
 	margin: 0;
-	font: 16px "Regular", sans-serif; /*без засечек*/
+	font-size: 16px;
 	padding-bottom: 14px;
 	line-height: 26px;
 }
@@ -221,7 +236,7 @@ body {
 main a {
 	color: #278aff;
 	text-decoration: none;
-	font: 14px "Regular", sans-serif; /*без засечек*/
+	font-size: 14px;
 }
 
 main a:hover {
@@ -230,7 +245,7 @@ main a:hover {
 
 .main__video {
 	position: absolute;
-	top: 100px;
+	top: 0;
 	right: 0;
 	width: 445px;
 	height: 295px;
@@ -262,7 +277,9 @@ main a:hover {
 }
 
 .main__video-action {
-	font: 16px "Medium", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 26px;
 	color: #fff;
 	position: relative;
 	transition: 0.4s;
@@ -282,9 +299,6 @@ main a:hover {
 
 /*Benefits*/
 .main__benefits {
-	max-width: 1110px;
-	min-height: 176px;
-	margin: auto;
 	display: flex;
 	justify-content: space-between;
 }
@@ -302,31 +316,28 @@ main a:hover {
 .main__behefits-title {
 	margin: 0;
 	text-align: center;
-	font: 18px "SemiBold", sans-serif;
-	font-weight: bold;
+	font-size: 18px;
+	font-weight: 600; /*SemiBold*/
 	padding-bottom: 12px;
 }
 
 .main__behefits-subtitle {
 	margin: 0 auto;
 	text-align: center;
-	max-width: 263px;
-	font: 14px "Regular", sans-serif;
+	font-size: 14px;
 	line-height: 22px;
 }
 
 /*Footer*/
 .footer {
-	font: 12px "Regular", sans-serif;
+	font-size: 12px;
 }
 
 .footer__container {
-	max-width: 1110px;
-	min-height: 78px;
-	margin: auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 20px;
 }
 
 .footer__title span {

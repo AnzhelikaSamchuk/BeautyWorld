@@ -4,19 +4,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Мир красоты</title>
-	<link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
 		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
 		rel="stylesheet">
+
+	<link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 	<div class="wrapper">
 		<header class="header">
-			<div class="header__container">
+			<div class="container header__container">
 				<div class="header__top">
 					<a href="/" class="logo">Мир красоты</a>
 					<nav class="navigation">
@@ -29,13 +30,13 @@
 						</ul>
 					</nav>
 					<div class="information">
-						<span class="phone">8 (499) 686-17-62</span>
-						<span class="text">с 10.00 до 19.00 без выходных</span>
+						<a class="information__phone" href="tel:84996861762">8 (499) 686-17-62</a>
+						<span class="information__text">с 10.00 до 19.00 без выходных</span>
 					</div>
 				</div>
 				<div class="header__hero">
 					<div class="hero__content">
-						<h1 class="hero__title">Создай свой образ вместе с нами</h1>
+						<h1 class="hero__title">Создай свой образ <br> вместе с нами</h1>
 						<p class="hero__subtitle">Идеальный образ за 60 минут</p>
 						<button class="btn hero__btn">Записаться онлайн</button>
 					</div>
@@ -47,7 +48,7 @@
 						</ul>
 					</div>
 					<div class="hero__img">
-						<img class="img" src="./images/woman.png" alt="">
+						<!--<img class="img" src="./images/woman.png" alt="">-->
 						<div class="hero__circle"></div>
 					</div>
 				</div>
@@ -55,19 +56,14 @@
 		</header>
 
 		<main class="main">
-			<div class="main__container">
+			<div class="container">
+				<h1 class="main__title">О салоне</h1>
 				<div class="main__top">
 					<div class="main__toptitle">
-						<h1 class="main__title">О салоне</h1>
 						<p class="main__subtitle">
-							Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты,
-							стилисты и мастера татуажа</p>
+							Мир красоты - это уютный салон в самом центре <br> города. Здесь работают профессиональные <br> визажисты, стилисты и мастера татуажа</p>
 						<p class="main__desc">
-							Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает
-							форму,
-							а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений.
-							Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль –
-							вместе с Вами и для Вас.
+							Красота и хороший уход никогда не выходят из моды. Мы <br> приглашаем Вас в место, где гармония обретает форму, <br> а внешность становится отражением внутреннего мира. Новая <br> жизнь начинается с небольших изменений. Мы помогаем <br> нашим клиентам воплотить их индивидуальность во внешнем <br> облике. Мы создаем стиль – вместе с Вами и для Вас.
 						</p>
 						<a href="#">Развернуть</a>
 					</div>
@@ -75,28 +71,28 @@
 						<div class="main__video-action">Короткое видео о нас</div>
 					</div>
 				</div>
-				<div class="main__benefits">
+				<div class="container main__benefits">
 					<div class="main__benefits-frame">
 						<img class="main__benefits-svg" src="./images/Group.svg" alt="">
 						<p class="main__behefits-title">Удобные кабинеты</p>
-						<p class="main__behefits-subtitle">Комфорт и стиль - принцип создания кабинетов салона красоты. Только эстетика и удобство для Вас</p>
+						<p class="main__behefits-subtitle">Комфорт и стиль - принцип создания <br> кабинетов салона красоты. Только <br> эстетика и удобство для Вас</p>
 					</div>
 					<div class="main__benefits-frame">
 						<img class="main__benefits-svg" src="./images/health-care 1.svg" alt="">
 						<p class="main__behefits-title">Качественная косметика</p>
-						<p class="main__behefits-subtitle">Используем профессиональные материалы высшего качества лучших брендов</p>
+						<p class="main__behefits-subtitle">Используем профессиональные <br> материалы высшего качества <br> лучших брендов</p>
 					</div>
 					<div class="main__benefits-frame">
 						<img class="main__benefits-svg" src="./images/Group (1).svg" alt="">
 						<p class="main__behefits-title">Опытные мастера</p>
-						<p class="main__behefits-subtitle">Работают только опытные мастера с чувством стиля. Смотрите наших специалистов в разделе Мастера</p>
+						<p class="main__behefits-subtitle">Работают только опытные мастера <br> с чувством стиля. Смотрите наших <br> специалистов в разделе Мастера</p>
 					</div>
 				</div>
 			</div>
 		</main>
 
 		<footer class="footer">
-			<div class="footer__container">
+			<div class="container footer__container">
 				<div class="footer__title">
 					<span>© 2020 «Море красоты»</span> <br>
 					<a href="#">Политика конфиденциальности</a>
