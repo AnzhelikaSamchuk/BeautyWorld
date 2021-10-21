@@ -68,7 +68,7 @@ body {
 	font-weight: 500; /*Medium*/
 	font-size: 14px;
 	line-height: 14px;
-	padding: 17px 30px;
+	/*padding: 17px 30px;*/
 	border-radius: 24px;
 	transition: 0.15s background-color, 0.15s transform;
 }
@@ -76,11 +76,13 @@ body {
 .btn:hover {
 	background-color: #ef8160;
 	transform: scale(1.1);
+	color: #fff;
 	transition: 0.15s background-color, 0.15s transform;
 }
 
 .btn:active {
 	background-color: #f3724a;
+	color: #fff;
 }
 
 /*Верхняя панель*/
@@ -163,7 +165,7 @@ body {
 	margin: 0px 0px 60px;
 }
 
-.btn__hero {
+.hero__btn {
 	min-width: 203px;/*если будет добавляться текст, то она будет расширяться*/
 	height: 48px;
 }
@@ -236,7 +238,6 @@ title {
 }
 
 .about__top {
-	padding-bottom: 50px;
 	position: relative;
 }
 
@@ -343,19 +344,19 @@ title {
 	margin-top: 30px;
 }*/
 
-.benefits__svg {
+.benefit__svg {
 	width: 48px;
 	height: 48px;
 	margin-bottom: 28px;
 }
 
-.benefits__title {
+.benefit__title {
 	font-size: 18px;
 	font-weight: 600; /*SemiBold*/
 	margin: 0 0 12px;
 }
 
-.benefits__subtitle {
+.benefit__subtitle {
 	font-size: 14px;
 	line-height: 22px;
 	margin-top: 0;
@@ -374,11 +375,53 @@ title {
 
 /*Services*/
 
-.
+.services {
+	margin-bottom: 40px; /*Чтобы был отступ между блоками services*/
+}
+
+.section_services {
+	padding: 0;
+	margin: 50px 0 10px; /*40+10=50 перед следующим блоком Price*/
+}
+
+.section__header {
+	font-weight: bold;
+	font-size: 48px;
+}
+
+.section_small {
+	font-size: 36px;
+	margin-bottom: 35px;
+}
+
+.services__img {
+	width: 350px;
+	height: 180px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
 
 .services__title {
-	font-size: 36px;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 8px;
 }
+
+.services__subtitle {
+	font-size: 12px;
+	line-height: 20px;
+	margin-bottom: 16px;
+}
+
+.services__btn {
+	min-width: 112px;/*если будет добавляться текст, то она будет расширяться*/
+	height: 34px;
+	font-size: 12px;
+	border-radius: 17px;
+}
+
+/*Price*/
+
 
 
 
