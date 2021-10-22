@@ -1,0 +1,44 @@
+@import "vars";
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	color: #333333;
+	font: 20px "Montserrat", sans-serif;
+	font-weight: 400; /*Regular*/
+	min-width: 320px; /*Для адаптивности*/
+}
+
+.btn {
+	border: none;
+	background-color: $btn-color;
+	outline: 0;
+	cursor: pointer;
+	color: $color-white;
+	font-weight: 500; /*Medium*/
+	font-size: 14px;
+	line-height: 14px;
+	/*padding: 17px 30px;*/
+	border-radius: 24px;
+	transition: 0.15s background-color, 0.15s transform;
+
+	&:hover {
+		background-color: darken($btn-color, 5%);
+		transform: scale(1.1);
+		color: $color-white;
+		transition: 0.15s background-color, 0.15s transform;
+	}
+
+	&:active {
+		background-color: darken($btn-color, 7%);
+		color: $color-white;
+	}
+}

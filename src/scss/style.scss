@@ -1,12 +1,6 @@
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-}
+@import "vendors";
+@import "common";
+@import "vars";
 
 html,
 body,
@@ -17,7 +11,7 @@ body,
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	background-color: white;
+	background-color: $color-white;
 }
 
 .wrapper .main {
@@ -29,60 +23,27 @@ body,
 	flex-shrink: 0; /*не будет сжиматься*/
 }
 
-body {
-	color: #333333;
-	font: 20px "Montserrat", sans-serif;
-	font-weight: 400; /*Regular*/
-	min-width: 320px;/*Для адаптивности*/
-}
-
 .header {
 	background-image: url("./images/bc.jpg");
 	overflow: hidden; /*Чтобы часть круга, которая вылезала скрылась!*/
+
+	&__container {
+		position: relative;
+		padding: 30px 0 130px 0;
+	}
+
+	&__top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin-bottom: 120px;
+	}
 }
 
 .container {
 	max-width: 1110px;
 	width: 100%;
 	margin: auto;
-}
-
-.header__container {
-	position: relative;
-	padding: 30px 0 130px 0;
-}
-
-.header__top {
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	margin-bottom: 120px;
-}
-
-.btn {
-	border: none;
-	background-color: #fb9475;
-	outline: 0;
-	cursor: pointer;
-	color: #fff;
-	font-weight: 500; /*Medium*/
-	font-size: 14px;
-	line-height: 14px;
-	/*padding: 17px 30px;*/
-	border-radius: 24px;
-	transition: 0.15s background-color, 0.15s transform;
-}
-
-.btn:hover {
-	background-color: #ef8160;
-	transform: scale(1.1);
-	color: #fff;
-	transition: 0.15s background-color, 0.15s transform;
-}
-
-.btn:active {
-	background-color: #f3724a;
-	color: #fff;
 }
 
 /*Верхняя панель*/
@@ -166,7 +127,7 @@ body {
 }
 
 .hero__btn {
-	min-width: 203px;/*если будет добавляться текст, то она будет расширяться*/
+	min-width: 203px; /*если будет добавляться текст, то она будет расширяться*/
 	height: 48px;
 }
 
@@ -216,7 +177,7 @@ body {
 	border-radius: 50%;
 	bottom: -110px;
 	right: 90px;
-	background-color: #fb9475;
+	background-color: $btn-color;
 }
 
 /*Main*/
@@ -257,7 +218,7 @@ title {
 .about button {
 	color: #278aff;
 	border: none;
-	background-color: #fff;
+	background-color: $color-white;
 	font-size: 14px;
 }
 
@@ -303,7 +264,7 @@ title {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 26px;
-	color: #fff;
+	color: $color-white;
 	position: relative;
 	transition: 0.4s;
 	padding-top: 75px;
@@ -334,9 +295,39 @@ title {
 	text-align: center;
 }*/
 
+/*.benefit__svg { перевод на scss
+	margin-bottom: 28px;
+}
+.benefit__svg img {
+	width: 48px;
+	height: 48px;
+}*/
+
 .benefit {
 	text-align: center;
+
+	&__svg {
+		margin-bottom: 28px;
+
+		img {
+			width: 48px;
+			height: 48px;
+		}
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 600; /*SemiBold*/
+		margin: 0 0 12px;
+	}
+
+	&__subtitle {
+		font-size: 14px;
+		line-height: 22px;
+		margin-top: 0;
+	}
 }
+
 /*
 .benefits__frame {
 	width: 33.3333%;
@@ -344,34 +335,7 @@ title {
 	margin-top: 30px;
 }*/
 
-.benefit__svg {
-	width: 48px;
-	height: 48px;
-	margin-bottom: 28px;
-}
-
-.benefit__title {
-	font-size: 18px;
-	font-weight: 600; /*SemiBold*/
-	margin: 0 0 12px;
-}
-
-.benefit__subtitle {
-	font-size: 14px;
-	line-height: 22px;
-	margin-top: 0;
-}
-
-/*Медиа запросы*/
-/*@media screen and (max-width: 768px) { /*Для ipad
-	.benefits {
-		flex-direction: column;
-	}
-
-	.benefits__frame {
-		width: 100%;
-	}
-}*/
+@import "media";
 
 /*Services*/
 
@@ -414,7 +378,7 @@ title {
 }
 
 .services__btn {
-	min-width: 112px;/*если будет добавляться текст, то она будет расширяться*/
+	min-width: 112px; /*если будет добавляться текст, то она будет расширяться*/
 	height: 34px;
 	font-size: 12px;
 	border-radius: 17px;
@@ -422,26 +386,11 @@ title {
 
 /*Price*/
 
-
-
-
 /*Masters*/
 .section_gray-bg {
-	padding: 80px 0 ;
+	padding: 80px 0;
 	background-color: #999;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*Footer*/
 .footer {

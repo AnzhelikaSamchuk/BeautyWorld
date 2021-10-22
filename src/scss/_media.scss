@@ -1,0 +1,11 @@
+/*Медиа запросы*/
+@media screen and (max-width: 768px) {
+	/*Для ipad*/
+	.benefits {
+		flex-direction: column;
+	}
+
+	.benefits__frame {
+		width: 100%;
+	}
+}
