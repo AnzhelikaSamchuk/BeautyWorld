@@ -76,7 +76,7 @@ body,
 
 .navigation li a:hover {
 	color: #00bf78;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .navigation a {
@@ -349,7 +349,7 @@ title {
 	font-size: 48px;
 }
 
-.section_small {
+.section__header_small {
 	font-size: 36px;
 	margin-bottom: 35px;
 }
@@ -382,9 +382,50 @@ title {
 
 /*Price*/
 
-.section-price {
+.section_price {
 	padding: 50px 0 100px; //чтобы снизу было 100 белого до masters
 }
+
+
+/*.navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.navigation li:not(:last-child) {
+	margin-right: 28px;
+}
+
+.navigation li a:hover {
+	color: #00bf78;
+	text-decoration: none;
+}
+
+.navigation a {
+	color: #333333;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 14px;
+}*/
+
+.navigation_price {
+	margin-bottom: 47px;
+}
+
+.navigation_price ul {
+	justify-content: flex-start;
+}
+
+.navigation .active a {
+	color: #00bf78;
+	text-decoration: underline;
+}
+
 
 /*Masters*/
 
@@ -393,7 +434,7 @@ title {
 	background-color: #f8f6f7;
 }
 
-.section_big {
+.section__header_big {
 	font-size: 48px;
 	margin-bottom: 32px;
 }
@@ -448,23 +489,12 @@ title {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px;
+	padding: 20px 0;
 }
 
 .footer__title span {
 	display: inline-block;
 	padding-bottom: 8px;
-}
-
-.footer__navigation ul {
-	margin: 0;
-	list-style: none;
-	display: flex;
-	align-items: center;
-}
-
-.footer__navigation li:not(:last-child) {
-	margin-right: 28px;
 }
 
 .footer__title a {
@@ -475,11 +505,9 @@ title {
 	color: #083b79;
 }
 
-.footer__navigation a {
-	text-decoration: none;
+.navigation_footer a {
 	color: #333333;
-}
-
-.footer__navigation a:hover {
-	color: #000000;
+	text-decoration: none;
+	font-weight: 400; /*Medium*/
+	font-size: 12px;
 }
