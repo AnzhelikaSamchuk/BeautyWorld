@@ -75,7 +75,7 @@ body,
 }
 
 .navigation li a:hover {
-	color: #00bf78;
+	color: $color-green;
 	text-decoration: none;
 }
 
@@ -223,14 +223,14 @@ title {
 }
 
 .about button {
-	color: #278aff;
+	color: $color-blue;
 	border: none;
 	background-color: $color-white;
 	font-size: 14px;
 }
 
 .about button:hover {
-	color: #083b79;
+	color: darken($color-blue, 5%)
 }
 
 .beauty-video {
@@ -383,7 +383,7 @@ title {
 /*Price*/
 
 .section_price {
-	padding: 50px 0 100px; //чтобы снизу было 100 белого до masters
+	padding: 50px 0 68px; //чтобы снизу было 100 белого до masters 100 - 32 от prices
 }
 
 .navigation_price {
@@ -395,12 +395,41 @@ title {
 }
 
 .navigation .active a {
-	color: #00bf78;
+	color: $color-green;
 	text-decoration: underline;
 }
 
+.section__ben-price {
+	max-width: 1015px;
+	width: 100%;
+}
 
+.prices {
+	max-width: 444px;
+	width: 100%;
+	margin-bottom: 32px;
+	display: flex;
+	justify-content: space-between;
+}
 
+.prices__title {
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.prices__subtitle {
+	font-weight: 500;
+	font-size: 14px;
+	margin: 0;
+}
+
+.prices__price {
+	font-weight: 600;
+	font-size: 20px;
+	margin: 0;
+	color: $color-green;
+}
 
 /*Masters*/
 
@@ -473,11 +502,11 @@ title {
 }
 
 .footer__title a {
-	color: #278aff;
+	color: $color-blue;
 }
 
 .footer__title a:hover {
-	color: #083b79;
+	color: darken($color-blue, 5%);
 }
 
 .navigation_footer a {
