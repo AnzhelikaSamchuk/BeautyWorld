@@ -47,9 +47,18 @@ body,
 
 /*Верхняя панель*/
 
-.hamb {
-	width: 24px;
-	height: 24px;
+.humb {
+	border: none;
+	width: 32px;
+	height: 32px;
+	background-position: center;
+	background-size: cover; /*полное покрытие размера своего родителя*/
+	background-repeat: no-repeat;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
 .header__top .logo {
@@ -60,6 +69,10 @@ body,
 	display: inline-block;
 }
 
+.header__top_humb {
+	display: flex;
+	justify-content: flex-start;
+}
 //навигация
 
 .navigation a {
@@ -489,4 +502,5 @@ title {
 	font-weight: 400;
 	font-size: 12px;
 }
+
 
