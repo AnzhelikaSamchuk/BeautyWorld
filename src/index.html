@@ -11,8 +11,9 @@
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
 		rel="stylesheet">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -23,8 +24,14 @@
 
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header class="header" style="background-image: url('./images/bc.jpg')">
 			<div class="container header__container">
+
+				<!-- #mobile-menu-btn для обращения к кнопке из JS -->
+				<button class="hamb header__hamb" style="background-image: url('./images/humb.png');">
+					<div class="hamb__inner"></div>
+				</button>
+
 				<div class="header__top">
 					<a href="/" class="logo">Мир красоты</a>
 					<nav class="navigation">
@@ -47,14 +54,14 @@
 						<p class="hero__subtitle">Идеальный образ за 60 минут</p>
 						<button class="btn hero__btn">Записаться онлайн</button>
 					</div>
-					<div class="hero__frame">
+					<div class="hero__frame hero_horizontal">
 						<ul>
 							<li><a href="#"><img src="./images/vk.svg" alt=""></a></li>
 							<li><a href="#"><img src="./images/inst.svg" alt=""></a></li>
 							<li><a href="#"><img src="./images/youTube.svg" alt=""></a></li>
 						</ul>
 					</div>
-					<div class="hero__img"></div>
+					<div class="hero__img" style="background-image: url('./images/woman.png')"></div>
 					<div class="hero__circle"></div>
 				</div>
 			</div>
@@ -79,7 +86,9 @@
 							<button>Развернуть</button>
 						</div>
 						<div class="beauty-video" style="background-image: url('./images/video.jpg')">
-							<div class="beauty-video-action">Короткое видео о нас</div>
+							<div class="beauty-video__action"
+								style="background-image: url('./images/iconPlay.svg'); background-position: center top; background-repeat: no-repeat">
+								Короткое видео о нас</div>
 						</div>
 					</div>
 				</div>
@@ -180,7 +189,7 @@
 				</div>
 			</section>
 
-			<section class="section">
+			<section class="section-price">
 				<div class="container">
 					<header class="section__header">
 						<h2 class="section__title">Услуги и цены</h2>
@@ -189,21 +198,56 @@
 					</header>
 
 					<div class="section__inner">
-
 					</div>
 				</div>
 			</section>
 
 			<section class="section section_gray-bg">
 				<div class="container">
-					<header class="section__header section_small">Популярные услуги</header>
-					<header class="section__header">
-						<h2 class="section__title">Мастера</h2>
-						<p class="section__subtitle"></p>
-						<div class="section__actions"></div>
-					</header>
+					<header class="section__header section_big">Мастера</header>
+					<h2 class="section__title">Дружная команда настоящих профессионалов</h2>
 
-					<div class="section__inner">
+					<div class="row">
+						<div class="col-xl-3 col-md-6 col-12">
+							<div class="masters">
+								<div class="beauty-video beauty-video_masters"
+									style="background-image: url('./images/irina.jpg')">
+									<div class="beauty-video__action beauty-video__action_masters">Записаться <br> к мастеру
+									</div>
+								</div>
+								<!--<img class="masters__img" src="./images/irina.jpg" alt="">-->
+								<h3 class="masters__title">Краснова Ирина</h3>
+								<p class="masters__subtitle">Мастер ногтевого сервиса</p>
+								<p class="masters__desc">опыт работы 5 лет</p>
+							</div>
+						</div>
+
+						<div class="col-xl-3 col-md-6 col-12">
+							<div class="masters">
+								<img class="masters__img" src="./images/zhanna.jpg" alt="">
+								<h3 class="masters__title">Калилова Жанна</h3>
+								<p class="masters__subtitle">Визажист-стилист</p>
+								<p class="masters__desc">опыт работы 5 лет</p>
+							</div>
+						</div>
+
+						<div class="col-xl-3 col-md-6 col-12">
+							<div class="masters">
+								<img class="masters__img" src="./images/alina.jpg" alt="">
+								<h3 class="masters__title">Киселева Алина</h3>
+								<p class="masters__subtitle">Парикмахер</p>
+								<p class="masters__desc">опыт работы 5 лет</p>
+							</div>
+						</div>
+
+						<div class="col-xl-3 col-md-6 col-12">
+							<div class="masters">
+								<img class="masters__img" src="./images/elena.jpg" alt="">
+								<h3 class="masters__title">Иванова Елена</h3>
+								<p class="masters__subtitle">Мастер ногтевого сервиса</p>
+								<p class="masters__desc">опыт работы 5 лет</p>
+							</div>
+						</div>
 
 					</div>
 				</div>

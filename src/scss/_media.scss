@@ -9,3 +9,67 @@
 		width: 100%;
 	}
 }
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+	.hero__circle,
+	.hero__img {
+		opacity: 0.5;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.navigation,
+	.hero__circle,
+	.hero__img {
+		display: none;
+	}
+
+	.hero__content {
+		text-align: center;
+	}
+
+	.hero__frame {
+		/*//top: 480px;
+		bottom: 0;
+		//right: 43%;
+		right: 50%;
+		transform: rotate(-90deg);*/
+		width: 50%;
+		height: 50%;
+		//margin: auto;
+		margin-bottom: 0;
+		margin-right: auto;
+		//top: 0; 
+		left: 0; 
+		bottom: 0; 
+		right: 0;
+		transform: rotate(-90deg);
+	}
+
+	.hero__frame img {
+		transform: rotate(90deg);
+	}
+}
+
+@media only screen and (max-width: 485px) { /*85 так как на этом размере нужно менять top*/
+	.navigation,
+	.hero__circle,
+	.hero__img {
+		display: none;
+	}
+
+	.hero__content {
+		text-align: center;
+	}
+
+	.hero__frame {
+		right: 43%;
+		top: 550px;
+		transform: rotate(-90deg);
+	}
+
+	.hero__frame img {
+		transform: rotate(90deg);
+	}
+}
