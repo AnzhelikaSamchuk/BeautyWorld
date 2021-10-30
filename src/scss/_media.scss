@@ -14,20 +14,22 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
-	.hero__circle,
-	.hero__img {
+	.header__girl {
 		opacity: 0.5;
 	}
 
 	.humb {
 		display: none;
 	}
+
+	.navigation {
+		max-width: 370px;
+	}
 }
 
 @media only screen and (max-width: 768px) {
 	.navigation_header,
-	.hero__circle,
-	.hero__img {
+	.header__girl {
 		display: none;
 	}
 
@@ -39,9 +41,39 @@
 		text-align: center;
 	}
 
-	.hero__frame {
-		right: 43%;
-		top: 80%;
+	/*.hero__frame {
+		//right: 45%;
+		//right: 50%;
+		//top: 80%;
+		/*content: "";
+		top: 0;
+		right: 0;
+		left: 0;*/
+		//position: static;
+		/*position: absolute;
+		left: 0;
+		transform: rotate(-90deg);*/
+
+		/*margin: 0;
+		left: 0;
+		bottom: 0;*/
+		//transform: rotate(-90deg);
+
+		//bottom: 0;
+		//top: 0;
+		/*bottom: 0;
+		left: 50%;
+		//margin-top: 0;
+		margin-left: -16px;
+		transform: rotate(-90deg);
+		all: none;
+	}*/
+
+	.hero__frame_horizontal {
+		top: 100%;
+		margin-top: 0;
+		left: 50%;
+		margin-left: -16px;
 		transform: rotate(-90deg);
 	}
 
@@ -50,11 +82,9 @@
 	}
 }
 
-@media only screen and (max-width: 485px) {
-	/*85 так как на этом размере нужно менять top*/
+@media only screen and (max-width: 480px) {
 	.navigation_header,
-	.hero__circle,
-	.hero__img {
+	.header__girl {
 		display: none;
 	}
 
@@ -66,13 +96,25 @@
 		text-align: center;
 	}
 
-	.hero__frame {
-		right: 43%;
-		top: 80%;
-		transform: rotate(-90deg);
+	.header__top {
+		display: block;
 	}
 
-	.hero__frame img {
-		transform: rotate(90deg);
+	.header__top_humb {
+		display: block;
+		margin-bottom: 20px;
+		position: relative;
+	}
+
+	.logo {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -86px; /*Половина всего logo*/
+	}
+
+	.information {
+		display: block;
+		margin: 0 auto 0;
 	}
 }

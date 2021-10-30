@@ -31,16 +31,21 @@ body {
 	transition: 0.15s background-color, 0.15s transform;
 
 	&:hover {
-		background-color: darken($btn-color, 5%);
+		background-color: darken($btn-color, 7%);
 		transform: scale(1.1);
 		color: $color-white;
 		transition: 0.15s background-color, 0.15s transform;
 	}
 
 	&:active {
-		background-color: darken($btn-color, 7%);
+		background-color: darken($btn-color, 15%);
 		color: $color-white;
 	}
+}
+
+.navigation {
+	max-width: 495px;
+	width: 100%;
 }
 
 .navigation ul {
@@ -63,7 +68,7 @@ body {
 }
 
 .navigation a {
-	color: #333333;
+	color: $color-grey;
 	text-decoration: none;
 	font-weight: 500; /*Medium*/
 	font-size: 14px;

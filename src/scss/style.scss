@@ -23,12 +23,20 @@ body,
 	flex-shrink: 0; /*не будет сжиматься*/
 }
 
+.container {
+	max-width: 1110px;
+	width: 100%;
+	margin: auto;
+}
+
 .header {
 	overflow: hidden; /*Чтобы часть круга, которая вылезала скрылась!*/
 
 	&__container {
 		position: relative;
-		padding: 30px 0 130px 0;
+		padding-top: 30px;
+		padding-bottom: 130px;
+		//padding: 30px auto 130px;
 	}
 
 	&__top {
@@ -39,18 +47,13 @@ body,
 	}
 }
 
-.container {
-	max-width: 1110px;
-	width: 100%;
-	margin: auto;
-}
-
 /*Верхняя панель*/
 
 .humb {
 	border: none;
 	width: 32px;
 	height: 32px;
+	padding: 0;
 	background-position: center;
 	background-size: cover; /*полное покрытие размера своего родителя*/
 	background-repeat: no-repeat;
@@ -73,14 +76,8 @@ body,
 	display: flex;
 	justify-content: flex-start;
 }
-//навигация
 
-.navigation a {
-	color: #333333;
-	text-decoration: none;
-	font-weight: 500; /*Medium*/
-	font-size: 14px;
-}
+//навигация
 
 .information {
 	position: relative;
@@ -118,9 +115,7 @@ body,
 /*Hero*/
 
 .hero {
-	&__content {
-		position: relative;
-	}
+	position: relative;
 
 	&__title {
 		font-weight: 600; /*SemiBold*/
@@ -139,13 +134,15 @@ body,
 
 	/*Hero__frame*/
 	&__frame {
+		width: 32px;
+		height: 128px;
 		position: absolute;
-		margin: 0;
-		padding: 0;
-		top: 207px;
-		right: 0px;
+		top: 50%;
+		margin-top: -64px;
+		right: 0;
 
 		ul {
+			padding: 0;
 			list-style: none;
 			margin-bottom: 0;
 		}
@@ -163,25 +160,36 @@ body,
 			transition: 0.15s transform;
 		}
 	}
+}
 
-	&__img {
-		position: absolute;
-		width: 524px;
-		height: 510px;
-		bottom: 0;
-		right: 90px;
-		z-index: 1;
-	}
+.header__girl {
+	position: absolute;
+	width: 524px;
+	height: 510px;
+	bottom: 0;
+	right: 90px;
+}
 
-	&__circle {
-		position: absolute;
-		width: 472px;
-		height: 472px;
-		border-radius: 50%;
-		bottom: -110px;
-		right: 90px;
-		background-color: $btn-color;
-	}
+.header__girl	img {
+	position: absolute;
+	content: "";
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+}
+
+.header__circle {
+	position: absolute;
+	content: "";
+	right: 0;
+	bottom: -110px;
+	width: 472px;
+	height: 472px;
+	border-radius: 50%;
+	background-color: $btn-color;
+	z-index: 1;
 }
 
 /*Main*/
@@ -227,7 +235,7 @@ title {
 	}
 
 	button:hover {
-		color: darken($color-blue, 5%);
+		color: darken($color-blue, 20%);
 	}
 }
 
@@ -247,7 +255,7 @@ title {
 
 	&:hover .beauty-video__action {
 		transform: scale(1.1);
-		transition: 0.15s transform;
+		transition: 0.3s transform;
 	}
 
 	//! не работает затемнение, сейчас картинка уже затемненная
@@ -439,16 +447,24 @@ title {
 
 .beauty-video__action_masters {
 	font-size: 16px;
+	text-align: center;
 	padding-top: 0;
+	visibility: hidden;
+	opacity: 0;
 }
 
-//? Может быть надо было по-другому сделать, при наведении текст, но я применила как в блоке "О салоне"
-/*.masters__img {
-	width: 255px;
-	height: 300px;
-	border-radius: 8px;
-	margin-bottom: 20px;
-}*/
+.beauty-video:hover .beauty-video__action_masters {
+	visibility: visible;
+	opacity: 1;
+	transform: scale(1.1);
+	transition: 0.5s transform;
+}
+
+.beauty-video a {
+	text-decoration: none;
+	color: $color-white;
+	transition: 0.5s;
+}
 
 .masters {
 	&__title {
@@ -494,13 +510,11 @@ title {
 
 	//? Не понимаю, оставить как есть или &__title a:hover перенести выше? Тогда как записывается? &:hover {...}?
 	&__title a:hover {
-		color: darken($color-blue, 5%);
+		color: darken($color-blue, 20%);
+	}
+
+	&_footer a {
+		font-weight: 400;
+		font-size: 12px;
 	}
 }
-
-.navigation_footer a {
-	font-weight: 400;
-	font-size: 12px;
-}
-
-
