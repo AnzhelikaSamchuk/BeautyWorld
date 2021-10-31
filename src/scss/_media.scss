@@ -25,6 +25,19 @@
 	.navigation {
 		max-width: 370px;
 	}
+
+	.about__top {
+		display: block;
+	}
+
+	.about__toptitle {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.beauty-video {
+		margin: 0 auto;
+	}
 }
 
 @media only screen and (max-width: 768px) {
@@ -41,34 +54,6 @@
 		text-align: center;
 	}
 
-	/*.hero__frame {
-		//right: 45%;
-		//right: 50%;
-		//top: 80%;
-		/*content: "";
-		top: 0;
-		right: 0;
-		left: 0;*/
-		//position: static;
-		/*position: absolute;
-		left: 0;
-		transform: rotate(-90deg);*/
-
-		/*margin: 0;
-		left: 0;
-		bottom: 0;*/
-		//transform: rotate(-90deg);
-
-		//bottom: 0;
-		//top: 0;
-		/*bottom: 0;
-		left: 50%;
-		//margin-top: 0;
-		margin-left: -16px;
-		transform: rotate(-90deg);
-		all: none;
-	}*/
-
 	.hero__frame_horizontal {
 		top: 100%;
 		margin-top: 0;
@@ -80,6 +65,12 @@
 	.hero__frame img {
 		transform: rotate(90deg);
 	}
+
+
+	.about__toptitle br {
+		display: none;
+	}
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -116,5 +107,9 @@
 	.information {
 		display: block;
 		margin: 0 auto 0;
+	}
+
+	.beauty-video {
+		width: 100%;
 	}
 }
