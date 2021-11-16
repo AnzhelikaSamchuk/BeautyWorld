@@ -522,15 +522,13 @@ title {
 		a {
 			color: $color-blue;
 		}
+
+		a:hover {
+			color: darken($color-blue, 20%);
+		}
 	}
 
-	//? Не понимаю, оставить как есть или &__title a:hover перенести выше? Тогда как записывается? &:hover {...}?
-	&__title a:hover {
-		color: darken($color-blue, 20%);
-	}
-
-	&_footer a {
-		font-weight: 400;
+	.navigation_footer a {
 		font-size: 12px;
 	}
 
