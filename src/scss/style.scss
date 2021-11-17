@@ -126,6 +126,11 @@ body,
 .hero {
 	position: relative;
 
+	&__content {
+		position: relative;
+		z-index: 1;
+	}
+
 	&__title {
 		font-weight: 600; /*SemiBold*/
 		font-size: 48px;
@@ -261,24 +266,22 @@ title {
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	position: relative;
 
 	&:hover .beauty-video__action {
 		transform: scale(1.1);
 		transition: 0.3s transform;
 	}
 
-	//! не работает затемнение, сейчас картинка уже затемненная
-
-	/*
 	&::before {
 		content: "";
+		position: absolute;
 		top: 0;
 		right: 0;
 		left: 0;
 		bottom: 0;
-		background: #000;
-		opacity: 20%;
-	}*/
+		background: rgba(#000, 0.2);
+	}
 
 	&__action {
 		font-weight: 500;
@@ -323,16 +326,17 @@ title {
 
 /*Services*/
 
-.masters {
-	margin-bottom: 40px; /*Чтобы был отступ между блоками services и works*/
+.section + .section_gray-bg {
+	margin-top: 50px;
 }
 
 .section {
 	padding: 50px 0;
 
-	&_services {
-		padding: 0;
-		margin: 50px 0 10px; /*40+10=50 перед следующим блоком Price*/
+	/*Services*/
+
+	&__services {
+		margin-top: -40px;
 	}
 
 	&__header {
@@ -344,13 +348,40 @@ title {
 		font-size: 36px;
 		margin-bottom: 35px;
 	}
+
+	/*Price*/
+
+	&__ben-price {
+		max-width: 1015px;
+		width: 100%;
+		margin-top: -32px;
+	}
+
+	/*Masters*/
+	&__masters {
+		margin-top: -40px;
+	}
+
+	&_gray-bg {
+		padding: 80px 0 80px; //80-40 --всего 80: 40 от masters +40 padding
+		background-color: #f8f6f7;
+	}
+
+	&__header_big {
+		font-size: 48px;
+		margin-bottom: 32px;
+	}
+
+	&__title {
+		font-size: 16px;
+		margin-bottom: 24px;
+	}
 }
 
 .services {
-	margin-bottom: 40px; /*Чтобы был отступ между блоками services и works*/
+	margin-top: 40px;
 
 	&__img {
-		//height: 180px;
 		width: 100%;
 		border-radius: 8px;
 		margin-bottom: 20px;
@@ -378,23 +409,6 @@ title {
 
 /*Price*/
 
-.section {
-	padding: 50px 0;
-
-	&_price {
-		padding: 50px 0 68px; //чтобы снизу было 100 белого до masters 100 - 32 от prices
-	}
-
-	&__ben-price {
-		max-width: 1015px;
-		width: 100%;
-	}
-}
-
-/*.navigation {
-	max-width: 794px;
-}*/
-
 .navigation_price {
 	max-width: 794px;
 	margin-bottom: 47px;
@@ -412,7 +426,7 @@ title {
 .prices {
 	max-width: 444px;
 	width: 100%;
-	margin: 0 auto 32px;
+	margin: 32px 0 0 0;
 	display: flex;
 	justify-content: space-between;
 
@@ -439,19 +453,9 @@ title {
 
 /*Masters*/
 
-.section_gray-bg {
-	padding: 80px 0 40px; //80-40 --всего 80: 40 от masters +40 padding
-	background-color: #f8f6f7;
-}
-
-.section__header_big {
-	font-size: 48px;
-	margin-bottom: 32px;
-}
-
-.section__title {
-	font-size: 16px;
-	margin-bottom: 24px;
+.masters {
+	//margin-bottom: 40px; /*Чтобы был отступ между блоками services и works*/
+	margin-top: 40px;
 }
 
 .beauty-video_masters {
@@ -647,10 +651,10 @@ form {
 
 		a {
 			color: $color-blue;
-		}
 
-		a:hover {
-			color: darken($color-blue, 20%);
+			&:hover {
+				color: darken($color-blue, 20%);
+			}
 		}
 	}
 
