@@ -1,0 +1,123 @@
+/*Медиа запросы*/
+
+@media only screen and (min-width: 1280px) {
+	.humb {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1280px) {
+	.humb {
+		display: none;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+	.header__girl {
+		opacity: 0.5;
+	}
+
+	.humb {
+		display: none;
+	}
+
+	.navigation {
+		max-width: 370px;
+	}
+
+	.about {
+		&__top {
+			display: block;
+		}
+
+		&__toptitle {
+			margin-bottom: 20px;
+			text-align: center;
+		}
+	}
+
+	.beauty-video {
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.navigation_header,
+	.header__girl {
+		display: none;
+	}
+
+	.humb {
+		display: block;
+	}
+
+	.hero {
+		&__content {
+			text-align: center;
+		}
+
+		&__frame_horizontal {
+			top: 100%;
+			margin-top: 0;
+			left: 50%;
+			margin-left: -16px;
+			transform: rotate(-90deg);
+		}
+
+		&__frame img {
+			transform: rotate(90deg);
+		}
+	}
+
+	.about {
+		&__toptitle br {
+			display: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.navigation_header,
+	.header__girl {
+		display: none;
+	}
+
+	.humb {
+		display: block;
+	}
+
+	.hero {
+		&__content {
+			text-align: center;
+		}
+	}
+
+	.header {
+		&__top {
+			display: block;
+		}
+
+		&__top_humb {
+			display: block;
+			margin-bottom: 20px;
+			position: relative;
+		}
+	}
+
+	.logo {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -86px; /*Половина всего logo*/
+	}
+
+	.information {
+		display: block;
+		margin: 0 auto 0;
+	}
+
+	.beauty-video {
+		width: 100%;
+	}
+}
