@@ -325,8 +325,12 @@ title {
 
 /*Services*/
 
-.section + .section_gray-bg {
+.section + .section__gray, .section__gray_contact {
 	margin-top: 50px;
+}
+
+.section + .section__gray {
+margin-bottom: 50px;
 }
 
 .section {
@@ -361,9 +365,14 @@ title {
 		margin-top: -40px;
 	}
 
-	&_gray-bg {
+	&__gray {
 		padding: 80px 0 80px;
 		background-color: #f8f6f7;
+	}
+
+	&__gray_contact {
+		background-color: #f8f6f7;
+		padding: 40px 0 40px;
 	}
 
 	&__header_big {
@@ -591,9 +600,9 @@ title {
 
 /*Contacts*/
 
-.section_gray-bg {
-	padding: 40px 0 40px;
-}
+//.section_gray-bg-contact {
+//	padding: 40px 0 40px;
+//}
 
 .contacts {
 	max-width: 1015px;
