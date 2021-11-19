@@ -460,9 +460,9 @@ title {
 	margin-top: 40px;
 }
 
-/*.beauty-video_masters::before {
+.beauty-video_masters::before {
 	background: rgba(0, 0, 0, 0);
-}*/
+}
 
 .beauty-video_masters {
 	width: 255px;
@@ -472,10 +472,12 @@ title {
 
 .beauty-video__action_masters {
 	font-size: 16px;
-	text-align: center;
-	padding-top: 0;
 	visibility: hidden;
 	opacity: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 50%;
+	text-align: center;
 }
 
 .beauty-video:hover .beauty-video__action_masters {
@@ -483,6 +485,8 @@ title {
 	opacity: 1;
 	transform: scale(1.1);
 	transition: 0.5s transform;
+
+	background: rgba(0, 0, 0, 0.5)
 }
 
 .beauty-video a {
@@ -563,10 +567,6 @@ title {
 	visibility: hidden;
 	opacity: 0;
 }
-
-/*.beauty-video_ourworks::before {
-	background: rgba(0, 0, 0, 0);
-}*/
 
 .beauty-video_ourworks:hover {
 	display: inline-block;
