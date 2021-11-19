@@ -75,6 +75,11 @@
 			display: none;
 		}
 	}
+
+	.masters__text {
+		text-align: center;
+	}
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -119,5 +124,9 @@
 
 	.beauty-video {
 		width: 100%;
+	}
+
+	.section__title_masters {
+		text-align: center;
 	}
 }

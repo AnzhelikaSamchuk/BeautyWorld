@@ -598,17 +598,40 @@ margin-bottom: 50px;
 	background: rgba(0, 0, 0, 0.5)
 }
 
-/*Contacts*/
+/*Brends*/
 
-//.section_gray-bg-contact {
-//	padding: 40px 0 40px;
-//}
+.brends {
+
+	&__title {
+		font-size: 16px;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	&__images {
+		max-width: 920px;
+		width: 100%;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		overflow: hidden;
+	}
+
+	&__img {
+		max-width: 160px;
+		margin: auto;
+	}
+}
+
+/*Contacts*/
 
 .contacts {
 	max-width: 1015px;
 	width: 100%;
 
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
@@ -616,6 +639,7 @@ margin-bottom: 50px;
 	max-width: 362px;
 	width: 100%;
 	padding-top: 38px; //78-40=38px
+	margin: 0 auto 40px auto;
 
 	&__subtitle {
 		font-size: 16px;
@@ -679,6 +703,7 @@ margin-bottom: 50px;
 .fast-recording {
 	max-width: 445px;
 	width: 100%;
+	margin: auto;
 	padding: 40px 35px;
 	border-width: 2px;
 	border-radius: 8px;
