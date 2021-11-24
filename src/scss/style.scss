@@ -557,9 +557,10 @@ margin-bottom: 50px;
 	max-width: 1440px;
 	width: 100%;
 	margin: -40px auto 17px auto;
-	display: flex;
+	overflow: visible;
+	/*display: flex;
 	justify-content: space-between;
-	flex-wrap: wrap;
+	flex-wrap: wrap;*/
 }
 
 .beauty-video_ourworks::before {
@@ -569,7 +570,8 @@ margin-bottom: 50px;
 .beauty-video_ourworks {
 	width: 338px;
 	height: 338px;
-	margin-top: 40px;
+	//margin-top: 40px;
+	margin: 40px 9px 17px 9px;
 	transition: 0.5s transform;
 }
 
@@ -585,7 +587,7 @@ margin-bottom: 50px;
 }
 
 .beauty-video_ourworks:hover {
-	transform: scale(1.1);
+	transform: scale(1.06);
 	transition: 0.5s transform;
 }
 
