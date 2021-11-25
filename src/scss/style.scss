@@ -36,7 +36,6 @@ body,
 		position: relative;
 		padding-top: 30px;
 		padding-bottom: 130px;
-		//padding: 30px auto 130px;
 	}
 
 	&__top {
@@ -89,7 +88,6 @@ body,
 .information {
 	position: relative;
 	width: 167px;
-	//width: 100%;
 	height: 36px;
 
 	&__phone,
@@ -154,6 +152,7 @@ body,
 		top: 50%;
 		margin-top: -64px;
 		right: 0;
+		z-index: 2;
 
 		ul {
 			padding: 0;
@@ -326,8 +325,12 @@ title {
 
 /*Services*/
 
-.section + .section_gray-bg {
+.section + .section__gray, .section__gray_contact {
 	margin-top: 50px;
+}
+
+.section + .section__gray {
+margin-bottom: 50px;
 }
 
 .section {
@@ -362,14 +365,23 @@ title {
 		margin-top: -40px;
 	}
 
-	&_gray-bg {
-		padding: 80px 0 80px; //80-40 --всего 80: 40 от masters +40 padding
+	&__gray {
+		padding: 80px 0 80px;
 		background-color: #f8f6f7;
+	}
+
+	&__gray_contact {
+		background-color: #f8f6f7;
+		padding: 40px 0 40px;
 	}
 
 	&__header_big {
 		font-size: 48px;
 		margin-bottom: 32px;
+	}
+
+	&__header_paginator {
+		font-size: 48px;
 	}
 
 	&__title {
@@ -454,21 +466,27 @@ title {
 /*Masters*/
 
 .masters {
-	//margin-bottom: 40px; /*Чтобы был отступ между блоками services и works*/
 	margin-top: 40px;
 }
 
+.beauty-video_masters::before {
+	background: rgba(0, 0, 0, 0);
+}
+
 .beauty-video_masters {
-	width: 100%;
+	width: 255px;
+	height: 300px;
 	margin-bottom: 20px;
 }
 
 .beauty-video__action_masters {
 	font-size: 16px;
-	text-align: center;
-	padding-top: 0;
 	visibility: hidden;
 	opacity: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 50%;
+	text-align: center;
 }
 
 .beauty-video:hover .beauty-video__action_masters {
@@ -476,6 +494,8 @@ title {
 	opacity: 1;
 	transform: scale(1.1);
 	transition: 0.5s transform;
+
+	background: rgba(0, 0, 0, 0.5)
 }
 
 .beauty-video a {
@@ -502,6 +522,236 @@ title {
 		text-transform: uppercase;
 		margin-bottom: 0;
 	}
+}
+
+/*Our works*/
+
+.header-paginator {
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: space-between;
+
+	&__pag {
+		margin-top: 23px;
+		width: 96px;
+		height: 40px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__pag_btn {
+		width: 40px;
+		height: 40px;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #f8f6f7;
+			border-radius: 50%;
+		}
+	}
+}
+
+.ourworks {
+	max-width: 1440px;
+	width: 100%;
+	margin: -40px auto 17px auto;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.beauty-video_ourworks::before {
+	background: rgba(0, 0, 0, 0);
+}
+
+.beauty-video_ourworks {
+	width: 338px;
+	height: 338px;
+	margin-top: 40px;
+	transition: 0.5s transform;
+}
+
+.beauty-video__action_ourworks {
+	font-size: 14px;
+	text-align: center;
+	visibility: hidden;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 55%;
+	position: relative;
+}
+
+.beauty-video_ourworks:hover {
+	transform: scale(1.1);
+	transition: 0.5s transform;
+}
+
+.beauty-video:hover .beauty-video__action_ourworks {
+	visibility: visible;
+	opacity: 1;
+	content: "";
+	position: absolute;
+
+	background: rgba(0, 0, 0, 0.5)
+}
+
+/*Brends*/
+
+.brends {
+
+	&__title {
+		font-size: 16px;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	&__images {
+		max-width: 920px;
+		width: 100%;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		overflow: hidden;
+	}
+
+	&__img {
+		max-width: 160px;
+		margin: auto;
+	}
+}
+
+/*Contacts*/
+
+.contacts {
+	max-width: 1015px;
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.contact {
+	max-width: 362px;
+	width: 100%;
+	padding-top: 38px; //78-40=38px
+	margin: 0 auto 40px auto;
+
+	&__subtitle {
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+
+	&_phone {
+		line-height: 14px;
+	}
+
+	a {
+		color: $color-blue;
+		font-size: 16px;
+	}
+
+	a:hover {
+		color: darken($color-blue, 20%);
+	}
+
+	&__sites {
+		margin: 32px auto 44px 0px; //12+32=44
+		font-size: 12px;
+		line-height: 14px;
+	}
+
+	&__frame {
+		width: 32px;
+		height: 128px;
+
+		ul {
+			padding: 0;
+			list-style: none;
+			margin-bottom: 0;
+		}
+
+		li:not(:last-child) {
+			margin-bottom: 16px;
+		}
+
+		li {
+			transition: 0.15s transform;
+		}
+
+		li:hover {
+			transform: scale(1.3);
+			transition: 0.15s transform;
+		}
+
+		&_horizontal {
+			padding-right: 128px;
+			margin-top: -128px;
+			transform: rotate(-90deg);
+		}
+
+		img {
+			transform: rotate(90deg);
+		}
+	}
+}
+
+.fast-recording {
+	max-width: 445px;
+	width: 100%;
+	margin: auto;
+	padding: 40px 35px;
+	border-width: 2px;
+	border-radius: 8px;
+	border-style: solid;
+	border-color: rgb(216, 216, 216);
+	background-color: $color-white;
+	box-shadow: 0 0 5px 5px rgba(216, 216, 216, 0.5);
+
+	&__title {
+		font-size: 18px;
+		line-height: 14px;
+		font-weight: 600;
+		margin-bottom: 15px;
+	}
+
+	&__subtitle {
+		font-size: 14px;
+		line-height: 20px;
+		margin-bottom: 35px;
+	}
+
+	&__form {
+		padding-left: 16px;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		font-size: 12px;
+		font-weight: 300;
+		margin-bottom: 0;
+	}
+}
+
+input {
+	max-width: 375px;
+	width: 100%;
+	border-radius: 4px;
+	border-color: #d8d8d8;
+	border-width: 1px;
+	height: 44px;
+	font-size: 14px;
+	line-height: 14px;
+	color: #a0a0a0;
+	text-overflow: ellipsis;
+}
+
+form {
+	margin-bottom: 16px;
 }
 
 /*Footer*/
