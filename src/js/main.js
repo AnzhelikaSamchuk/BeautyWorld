@@ -1,3 +1,5 @@
+import { TabsManager } from './tabs.js';
+
 $(document).ready(function () {
 	/*Мобильное меню*/
 	humb.addEventListener('click', () => {
@@ -76,5 +78,7 @@ $(document).ready(function () {
 		]
 	});
 
+	/*pricetabs*/
+	const tabs = new TabsManager(document.getElementById('pricetabs'));
 
 });

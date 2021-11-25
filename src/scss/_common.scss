@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	color: $color-grey;
+	color: color-grey;
 	font: $main-font;
 	font-weight: 400; /*Regular*/
 	min-width: 320px; /*Для адаптивности*/
@@ -75,6 +75,7 @@ body {
 .navigation li a:hover {
 	color: $color-green;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .navigation a {
