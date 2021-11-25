@@ -32,16 +32,28 @@
 
 				<div class="header__top">
 					<div class="header__top_humb">
-						<button class="humb" style="background-image: url('./images/humb2.png')"></button>
+						<button id="humb" class="humb" style="background-image: url('./images/humb2.png')"></button>
+						<div id="mobileMenu" class="mobile-menu" style="background-image: url('./images/bc.jpg')">
+							<nav id="navigation-humb" class="navigation">
+								<ul>
+									<li><a class="smooth-scroll" href="#prices">Услуги и цены</a></li>
+									<li><a class="smooth-scroll" href="#masters">Мастера</a></li>
+									<li><a class="smooth-scroll" href="#ourworks">Наши работы</a></li>
+									<li><a class="smooth-scroll" href="#about">О нас</a></li>
+									<li><a class="smooth-scroll" href="#contacts">Контакты</a></li>
+								</ul>
+							</nav>
+							<button id="closeHumb" class="btn services__btn">Закрыть</button>
+						</div>
 						<a href="/" class="logo">Мир красоты</a>
 					</div>
 					<nav class="navigation navigation_header">
 						<ul>
-							<li><a href="#">Услуги и цены</a></li>
-							<li><a href="#">Мастера</a></li>
-							<li><a href="#">Наши работы</a></li>
-							<li><a href="#">О нас</a></li>
-							<li><a href="#">Контакты</a></li>
+							<li><a class="smooth-scroll" href="#prices">Услуги и цены</a></li>
+							<li><a class="smooth-scroll" href="#masters">Мастера</a></li>
+							<li><a class="smooth-scroll" href="#ourworks">Наши работы</a></li>
+							<li><a class="smooth-scroll" href="#about">О нас</a></li>
+							<li><a class="smooth-scroll" href="#contacts">Контакты</a></li>
 						</ul>
 					</nav>
 					<div class="information">
@@ -73,7 +85,7 @@
 		<main class="main">
 			<section class="about">
 				<div class="container">
-					<h1 class="title about__title">О салоне</h1>
+					<h1 id="about" class="title about__title">О салоне</h1>
 					<div class="about__top">
 						<div class="about__toptitle">
 							<p class="about__subtitle">
@@ -194,7 +206,7 @@
 
 			<section class="section section_price">
 				<div class="container">
-					<header class="section__header section__header_big">Услуги и цены</header>
+					<header id="prices" class="section__header section__header_big">Услуги и цены</header>
 					<nav class="navigation navigation_price">
 						<ul>
 							<li class="active"><a href="#">Стрижка и укладка</a></li>
@@ -296,7 +308,7 @@
 
 			<section class="section section__gray">
 				<div class="container">
-					<header class="section__header section__header_big">Мастера</header>
+					<header id="masters" class="section__header section__header_big">Мастера</header>
 					<h2 class="section__title section__title_masters">Дружная команда настоящих профессионалов</h2>
 
 					<div class="section__masters">
@@ -370,7 +382,7 @@
 			<section class="section">
 				<div class="container">
 					<div class="header-paginator">
-						<header class="section__header section__header_paginator">Наши работы</header>
+						<header id="ourworks" class="section__header section__header_paginator">Наши работы</header>
 						<div class="header-paginator__pag">
 							<div class="header-paginator__pag_btn btn-prev" style="background-image: url('./images/left.svg')">
 							</div>
@@ -382,30 +394,30 @@
 				<div class="ourworks">
 					<div class="beauty-video beauty-video_ourworks" style="background-image: url('./images/ourworks1.jpg')">
 						<a data-fancybox="ourworks" data-src="./images/ourworks1.jpg">
-						<div class="beauty-video__action beauty-video__action_ourworks"
-							style="background-image: url('./images/zoom.svg'); background-position: 50% 45%; background-repeat: no-repeat">
-							Увеличить</div>
+							<div class="beauty-video__action beauty-video__action_ourworks"
+								style="background-image: url('./images/zoom.svg'); background-position: 50% 45%; background-repeat: no-repeat">
+								Увеличить</div>
 						</a>
 					</div>
 					<div class="beauty-video beauty-video_ourworks" style="background-image: url('./images/ourworks2.jpg')">
 						<a data-fancybox="ourworks" data-src="./images/ourworks2.jpg">
-						<div class="beauty-video__action beauty-video__action_ourworks"
-							style="background-image: url('./images/zoom.svg'); background-position: 50% 45%; background-repeat: no-repeat">
-							Увеличить</div>
+							<div class="beauty-video__action beauty-video__action_ourworks"
+								style="background-image: url('./images/zoom.svg'); background-position: 50% 45%; background-repeat: no-repeat">
+								Увеличить</div>
 						</a>
 					</div>
 					<div class="beauty-video beauty-video_ourworks" style="background-image: url('./images/ourworks3.jpg')">
 						<a data-fancybox="ourworks" data-src="./images/ourworks3.jpg">
-						<div class="beauty-video__action beauty-video__action_ourworks"
-							style="background-image: url('./images/zoom.svg'); background-position: 50% 45%; background-repeat: no-repeat">
-							Увеличить</div>
+							<div class="beauty-video__action beauty-video__action_ourworks"
+								style="background-image: url('./images/zoom.svg'); background-position: 50% 45%; background-repeat: no-repeat">
+								Увеличить</div>
 						</a>
 					</div>
 					<div class="beauty-video beauty-video_ourworks" style="background-image: url('./images/ourworks4.jpg')">
 						<a data-fancybox="ourworks" data-src="./images/ourworks4.jpg">
-						<div class="beauty-video__action beauty-video__action_ourworks"
-							style="background-image: url('./images/zoom.svg'); background-position: 50% 45%; background-repeat: no-repeat">
-							Увеличить</div>
+							<div class="beauty-video__action beauty-video__action_ourworks"
+								style="background-image: url('./images/zoom.svg'); background-position: 50% 45%; background-repeat: no-repeat">
+								Увеличить</div>
 						</a>
 					</div>
 
@@ -431,7 +443,7 @@
 				<div class="container">
 					<div class="contacts">
 						<div class="contact">
-							<header class="section__header section__header_big">Контакты</header>
+							<header id="contacts" class="section__header section__header_big">Контакты</header>
 							<p class="contact__subtitle">Томск, проспект Ленина, дом 13</p>
 							<p class="contact__subtitle contact_phone">8 (499) 686-17-62</p>
 							<a href="#" target="_blank">info@more-krasoty.ru</a>
@@ -473,10 +485,10 @@
 				</div>
 				<div class="navigation navigation_footer">
 					<ul>
-						<li><a href="#">Услуги и цены</a></li>
-						<li><a href="#">Мастера</a></li>
-						<li><a href="#">Наши работы</a></li>
-						<li><a href="#">Контакты</a></li>
+						<li><a class="smooth-scroll" href="#prices">Услуги и цены</a></li>
+						<li><a class="smooth-scroll" href="#masters">Мастера</a></li>
+						<li><a class="smooth-scroll" href="#ourworks">Наши работы</a></li>
+						<li><a class="smooth-scroll" href="#contacts">Контакты</a></li>
 					</ul>
 				</div>
 			</div>

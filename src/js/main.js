@@ -1,4 +1,39 @@
 $(document).ready(function () {
+	/*Мобильное меню*/
+	humb.addEventListener('click', () => {
+		mobileMenu.classList.add('visible');
+	});
+
+	closeHumb.addEventListener('click', () => {
+		mobileMenu.classList.remove('visible');
+	});
+
+	const navigationsHumb = document.querySelectorAll('#navigation-humb');
+	for (let link of navigationsHumb) {
+		link.addEventListener('click', event => {
+			console.log('click');
+			mobileMenu.classList.remove('visible');
+		})
+	}
+
+	/*Плавный скролл*/
+	const navigation = document.querySelector('.navigation');
+
+	document.addEventListener('scroll', event => {
+		console.log(event.target.scrollTop)
+	});
+
+	const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+
+	for (let link of smoothScrollLinks) {
+		link.addEventListener('click', event => {
+			event.preventDefault();
+
+			const target = event.target;
+			const elementToScroll = document.querySelector(target.getAttribute('href'));
+			elementToScroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		});
+	}
 
 	/*Наши работы*/
 	$('.ourworks').on('init reInit', function (e, slick) {

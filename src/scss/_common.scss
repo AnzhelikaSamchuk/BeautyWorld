@@ -47,6 +47,13 @@ body {
 	}
 }
 
+#navigation-humb ul {
+	margin: 30px auto 10px 12px;
+	justify-content: start;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
 .navigation {
 	max-width: 495px;
 }
@@ -73,6 +80,7 @@ body {
 .navigation a {
 	color: $color-grey;
 	text-decoration: none;
-	font-weight: 500; /*Medium*/
+	font-weight: 500;
 	font-size: 14px;
 }
+

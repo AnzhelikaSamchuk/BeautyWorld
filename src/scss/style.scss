@@ -69,6 +69,26 @@ body,
 	justify-content: center;
 }
 
+.mobile-menu {
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: auto;
+	width: 100%;
+	height: 100vh;
+	transition: 0.15s;
+	transform: translateX(-100%);
+	z-index: 1000;
+}
+
+.mobile-menu.visible {
+	transform: translateX(0);
+}
+
+#closeHumb {
+	margin-left: 12px;
+}
+
 .header__top .logo {
 	color: $color-grey;
 	font-weight: bold;
@@ -157,7 +177,9 @@ body,
 		ul {
 			padding: 0;
 			list-style: none;
+			margin-top: 0;
 			margin-bottom: 0;
+			display: block;
 		}
 
 		li:not(:last-child) {
@@ -325,12 +347,13 @@ title {
 
 /*Services*/
 
-.section + .section__gray, .section__gray_contact {
+.section + .section__gray,
+.section__gray_contact {
 	margin-top: 50px;
 }
 
 .section + .section__gray {
-margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .section {
@@ -495,7 +518,7 @@ margin-bottom: 50px;
 	transform: scale(1.1);
 	transition: 0.5s transform;
 
-	background: rgba(0, 0, 0, 0.5)
+	background: rgba(0, 0, 0, 0.5);
 }
 
 .beauty-video a {
@@ -558,9 +581,6 @@ margin-bottom: 50px;
 	width: 100%;
 	margin: -40px auto 17px auto;
 	overflow: visible;
-	/*display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;*/
 }
 
 .beauty-video_ourworks::before {
@@ -570,7 +590,6 @@ margin-bottom: 50px;
 .beauty-video_ourworks {
 	width: 338px;
 	height: 338px;
-	//margin-top: 40px;
 	margin: 40px 9px 17px 9px;
 	transition: 0.5s transform;
 }
@@ -597,13 +616,12 @@ margin-bottom: 50px;
 	content: "";
 	position: absolute;
 
-	background: rgba(0, 0, 0, 0.5)
+	background: rgba(0, 0, 0, 0.5);
 }
 
 /*Brends*/
 
 .brends {
-
 	&__title {
 		font-size: 16px;
 		text-align: center;
