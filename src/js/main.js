@@ -81,4 +81,26 @@ $(document).ready(function () {
 	/*pricetabs*/
 	const tabs = new TabsManager(document.getElementById('pricetabs'));
 
+	/*Форма - inputmask*/
+	$('#phone').inputmask({"mask": "+7 (999) 999-9999"});
+
+	/*Форма*/
+	const form = document.getElementById('form');
+
+	form.addEventListener('submit', event => {
+		event.preventDefault();
+
+		const formData = Array
+			.from(event.target.elements)
+			.filter(el => el.name)
+			.map(el => {
+			const {value, name} = el;
+			return { [name] : value};
+			});
+
+			console.log(formData);
+	});
+
+
+
 });

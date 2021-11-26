@@ -836,3 +836,10 @@ form {
 		margin-right: 28px;
 	}
 }
+
+/*Убираю подсветку на элементах*/
+:active, :hover, :focus {
+	outline: 0;
+	outline-offset: 0;
+}
+
