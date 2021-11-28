@@ -249,6 +249,11 @@ title {
 		justify-content: space-between;
 	}
 
+	&__toptitle {
+		max-width: 570px;
+		width: 100%;
+	}
+
 	&__subtitle {
 		margin: 0;
 		padding-bottom: 16px;
@@ -271,6 +276,7 @@ title {
 
 	button:hover {
 		color: darken($color-blue, 20%);
+		cursor: pointer;
 	}
 }
 
@@ -370,14 +376,18 @@ title {
 		font-size: 48px;
 	}
 
+	&__header_big {
+		font-size: 48px;
+		margin-bottom: 32px;
+	}
+
+	&__header_paginator {
+		font-size: 48px;
+	}
+
 	&__header_small {
 		font-size: 36px;
 		margin-bottom: 35px;
-	}
-
-	/*Masters*/
-	&__masters {
-		margin-top: -40px;
 	}
 
 	&__gray {
@@ -390,19 +400,19 @@ title {
 		padding: 40px 0 40px;
 	}
 
-	&__header_big {
-		font-size: 48px;
-		margin-bottom: 32px;
-	}
-
-	&__header_paginator {
-		font-size: 48px;
-	}
-
 	&__title {
 		font-size: 16px;
 		margin-bottom: 24px;
 	}
+
+	/*Наши работы*/
+	/*&__tools {
+		margin-top: 23px;
+		width: 96px;
+		height: 40px;
+		display: flex;
+		justify-content: space-between;
+	}*/
 }
 
 .services {
@@ -450,7 +460,6 @@ title {
 	max-width: 794px;
 	margin-bottom: 47px;
 	justify-content: flex-start;
-
 }
 
 .navigation .active a {
@@ -459,17 +468,16 @@ title {
 }
 
 .prices {
-
-	&__item { 
+	&__item {
 		max-width: 1015px;
 		width: 100%;
 		margin-top: -32px;
-      display: none; 
-       
-      &.active { 
-        display: block; 
-      } 
-    }
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
 
 	&__content {
 		max-width: 444px;
@@ -506,8 +514,20 @@ title {
 
 /*Masters*/
 
-.masters {
-	margin-top: 40px;
+.masters-wrapper {
+	margin-top: -40px;
+
+	& > div {
+		margin-top: 40px;
+	}
+}
+
+.masters-section {
+	&__title {
+		font-size: 16px;
+		margin: 0 auto 24px 0;
+		font-weight: 400;
+	}
 }
 
 .beauty-video_masters::before {
@@ -566,6 +586,43 @@ title {
 }
 
 /*Our works*/
+
+/*.ourworks-section {
+	&__paginator {
+		margin-bottom: 50px;
+		display: flex;
+		justify-content: space-between;
+
+		&__pag {
+			margin-top: 23px;
+			width: 96px;
+			height: 40px;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__pag_btn {
+		width: 40px;
+		height: 40px;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #f8f6f7;
+			border-radius: 50%;
+		}
+	}
+}
+
+.btn-prev {
+	background-image: url("./images/left.svg");
+}
+
+.btn-next {
+	background-image: url("./images/right.svg");
+}*/
 
 .header-paginator {
 	margin-bottom: 50px;
@@ -838,8 +895,9 @@ form {
 }
 
 /*Убираю подсветку на элементах*/
-:active, :hover, :focus {
+:active,
+:hover,
+:focus {
 	outline: 0;
 	outline-offset: 0;
 }
-
