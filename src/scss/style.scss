@@ -320,6 +320,80 @@ title {
 		padding-top: 75px;
 		transition: 0.15s transform;
 	}
+
+	/*Masters*/
+
+	&_masters::before {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	&_masters {
+		width: 255px;
+		height: 300px;
+		margin-bottom: 20px;
+	}
+
+	&__action_masters {
+		font-size: 16px;
+		visibility: hidden;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		padding-top: 50%;
+		text-align: center;
+	}
+
+	&:hover .beauty-video__action_masters {
+		visibility: visible;
+		opacity: 1;
+		transform: scale(1.1);
+		transition: 0.5s transform;
+
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	& a {
+		text-decoration: none;
+		color: $color-white;
+		transition: 0.5s;
+	}
+
+	/*our works*/
+	&_ourworks::before {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	&_ourworks {
+		width: 338px;
+		height: 338px;
+		margin: 40px 9px 17px 9px;
+		transition: 0.5s transform;
+	}
+
+	&__action_ourworks {
+		font-size: 14px;
+		text-align: center;
+		visibility: hidden;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		padding-top: 55%;
+		position: relative;
+	}
+
+	&_ourworks:hover {
+		transform: scale(1.06);
+		transition: 0.5s transform;
+	}
+
+	&:hover .beauty-video__action_ourworks {
+		visibility: visible;
+		opacity: 1;
+		content: "";
+		position: absolute;
+
+		background: rgba(0, 0, 0, 0.5);
+	}
 }
 
 /*Benefits*/
@@ -400,19 +474,37 @@ title {
 		padding: 40px 0 40px;
 	}
 
+	/*Our works*/
+
 	&__title {
-		font-size: 16px;
-		margin-bottom: 24px;
+		margin-bottom: 50px;
+		display: flex;
+		justify-content: space-between;
 	}
 
-	/*Наши работы*/
-	/*&__tools {
+	&__tools {
 		margin-top: 23px;
 		width: 96px;
 		height: 40px;
 		display: flex;
 		justify-content: space-between;
-	}*/
+
+		&_btn {
+			width: 40px;
+			height: 40px;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: none;
+			background-color: $color-white;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #f8f6f7;
+			border-radius: 50%;
+		}
+		}
+	}
+
 }
 
 .services {
@@ -530,41 +622,6 @@ title {
 	}
 }
 
-.beauty-video_masters::before {
-	background: rgba(0, 0, 0, 0);
-}
-
-.beauty-video_masters {
-	width: 255px;
-	height: 300px;
-	margin-bottom: 20px;
-}
-
-.beauty-video__action_masters {
-	font-size: 16px;
-	visibility: hidden;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	padding-top: 50%;
-	text-align: center;
-}
-
-.beauty-video:hover .beauty-video__action_masters {
-	visibility: visible;
-	opacity: 1;
-	transform: scale(1.1);
-	transition: 0.5s transform;
-
-	background: rgba(0, 0, 0, 0.5);
-}
-
-.beauty-video a {
-	text-decoration: none;
-	color: $color-white;
-	transition: 0.5s;
-}
-
 .masters {
 	&__title {
 		font-size: 18px;
@@ -585,70 +642,12 @@ title {
 	}
 }
 
-/*Our works*/
-
-/*.ourworks-section {
-	&__paginator {
-		margin-bottom: 50px;
-		display: flex;
-		justify-content: space-between;
-
-		&__pag {
-			margin-top: 23px;
-			width: 96px;
-			height: 40px;
-			display: flex;
-			justify-content: space-between;
-		}
-	}
-
-	&__pag_btn {
-		width: 40px;
-		height: 40px;
-		background-repeat: no-repeat;
-		background-position: center;
-
-		&:hover {
-			cursor: pointer;
-			background-color: #f8f6f7;
-			border-radius: 50%;
-		}
-	}
-}
-
 .btn-prev {
-	background-image: url("./images/left.svg");
+	background-image: url("/images/left.svg");
 }
 
 .btn-next {
-	background-image: url("./images/right.svg");
-}*/
-
-.header-paginator {
-	margin-bottom: 50px;
-	display: flex;
-	justify-content: space-between;
-
-	&__pag {
-		margin-top: 23px;
-		width: 96px;
-		height: 40px;
-		display: flex;
-		justify-content: space-between;
-	}
-
-	&__pag_btn {
-		width: 40px;
-		height: 40px;
-		background-repeat: no-repeat;
-		background-position: center;
-
-		&:hover {
-			cursor: pointer;
-			background-color: #f8f6f7;
-			border-radius: 50%;
-		}
-	}
+	background-image: url("/images/right.svg");
 }
 
 .ourworks {
@@ -656,42 +655,6 @@ title {
 	width: 100%;
 	margin: -40px auto 17px auto;
 	overflow: visible;
-}
-
-.beauty-video_ourworks::before {
-	background: rgba(0, 0, 0, 0);
-}
-
-.beauty-video_ourworks {
-	width: 338px;
-	height: 338px;
-	margin: 40px 9px 17px 9px;
-	transition: 0.5s transform;
-}
-
-.beauty-video__action_ourworks {
-	font-size: 14px;
-	text-align: center;
-	visibility: hidden;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	padding-top: 55%;
-	position: relative;
-}
-
-.beauty-video_ourworks:hover {
-	transform: scale(1.06);
-	transition: 0.5s transform;
-}
-
-.beauty-video:hover .beauty-video__action_ourworks {
-	visibility: visible;
-	opacity: 1;
-	content: "";
-	position: absolute;
-
-	background: rgba(0, 0, 0, 0.5);
 }
 
 /*Brends*/
@@ -828,6 +791,7 @@ title {
 	&__text {
 		font-size: 12px;
 		font-weight: 300;
+		margin-top: 16px;
 		margin-bottom: 0;
 	}
 }
@@ -843,10 +807,6 @@ input {
 	line-height: 14px;
 	color: #a0a0a0;
 	text-overflow: ellipsis;
-}
-
-form {
-	margin-bottom: 16px;
 }
 
 /*Footer*/
