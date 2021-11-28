@@ -441,10 +441,6 @@ title {
 
 	/*Services*/
 
-	&__services {
-		margin-top: -40px;
-	}
-
 	&__header {
 		font-weight: bold;
 		font-size: 48px;
@@ -508,7 +504,6 @@ title {
 }
 
 .services {
-	margin-top: 40px;
 
 	&__img {
 		width: 100%;
@@ -538,6 +533,22 @@ title {
 
 /*Price*/
 
+.price-wrapper {
+	margin-top: -32px;
+
+	/*max-width: 1015px;
+		width: 100%;
+		display: none;
+
+		&.active {
+			display: block;
+		}*/
+
+	& > div {
+		margin-top: 32px;
+	}
+}
+
 .navigation {
 	list-style: none;
 	margin: 0;
@@ -563,7 +574,6 @@ title {
 	&__item {
 		max-width: 1015px;
 		width: 100%;
-		margin-top: -32px;
 		display: none;
 
 		&.active {
@@ -574,7 +584,6 @@ title {
 	&__content {
 		max-width: 444px;
 		width: 100%;
-		margin: 32px 0 0 0;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -642,6 +651,7 @@ title {
 	}
 }
 
+/*Our works*/
 .btn-prev {
 	background-image: url("/images/left.svg");
 }
