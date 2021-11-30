@@ -1,3 +1,8 @@
+import $ from 'jquery';
+import 'slick-carousel';
+import 'inputmask';
+import { Fancybox } from "@fancyapps/ui";
+
 import { TabsManager } from './tabs.js';
 
 $(document).ready(function () {
@@ -82,7 +87,7 @@ $(document).ready(function () {
 	const tabs = new TabsManager(document.getElementById('pricetabs'));
 
 	/*Форма - inputmask*/
-	$('#phone').inputmask({"mask": "+7 (999) 999-9999"});
+	//$('#phone').inputmask({"mask": "+7 (999) 999-9999"});
 
 	/*Форма*/
 	const form = document.getElementById('form');
