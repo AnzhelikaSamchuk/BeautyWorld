@@ -124,18 +124,14 @@ body,
 		text-align: right;
 	}
 
-	& a {
-		color: $color-grey;
-		text-decoration: none;
-	}
-
 	&__text {
 		position: absolute;
 		display: inline-block;
 		width: 100%;
 		font-size: 11px;
 		text-align: right;
-		padding: 22px 0 0 0;
+		padding: 0;
+		margin-top: 22px;
 	}
 }
 
@@ -715,7 +711,9 @@ title {
 	}
 
 	&_phone {
+		display: block;
 		line-height: 14px;
+		margin-bottom: 20px;
 	}
 
 	a {
@@ -757,8 +755,8 @@ title {
 		}
 
 		&_horizontal {
-			padding-right: 128px;
-			margin-top: -128px;
+			margin-left: 50px;
+			margin-top: -80px;
 			transform: rotate(-90deg);
 		}
 
