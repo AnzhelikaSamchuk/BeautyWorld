@@ -87,7 +87,7 @@ $(document).ready(function () {
 	const tabs = new TabsManager(document.getElementById('pricetabs'));
 
 	/*Форма - inputmask*/
-	//$('#phone').inputmask({"mask": "+7 (999) 999-9999"});
+	$('#phone').inputmask({"mask": "+7 (999) 999-9999"});
 
 	/*Форма*/
 	const form = document.getElementById('form');
