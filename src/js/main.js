@@ -87,14 +87,30 @@ $(document).ready(function () {
 	const tabs = new TabsManager(document.getElementById('pricetabs'));
 
 	/*Форма - inputmask*/
-	$('#phone').inputmask({"mask": "+7 (999) 999-9999"});
+	//$('#phone').inputmask({"mask": "+7 (999) 999-9999"});
 
 	/*Форма*/
-	const form = document.getElementById('form');
+	const formConntact = document.getElementById('form-contact');
+	const loaderContact = document.getElementById('loader-contact');
+	const successContact = document.getElementById('success-contact');
 
-	form.addEventListener('submit', event => {
+	const formExtended = document.getElementById('form-extended');
+	const loaderExtended = document.getElementById('loader-extended');
+	const successExtended = document.getElementById('success-extended');
+
+	formConntact.addEventListener('submit', event => {
 		event.preventDefault();
 
+		changedForm(event, loaderContact, successContact, formConntact);
+	});
+
+	formExtended.addEventListener('submit', event => {
+		event.preventDefault();
+
+		changedForm(event, loaderExtended, successExtended, formExtended);
+	});
+
+	function changedForm(event, loader, success, form) {
 		const formData = Array
 			.from(event.target.elements)
 			.filter(el => el.name)
@@ -103,9 +119,29 @@ $(document).ready(function () {
 			return { [name] : value};
 			});
 
-			console.log(formData);
-	});
+		console.log(formData);
 
+		loader.style.display = 'block';
+			sendRequest(() => {
+				//после того как получили ответ блокируем лоадер
+				loader.style.display = 'none';
+				form.reset(); //сброс формы
+				success.style.display = 'block';
+				timeout(() => {
+					success.style.display = 'none';
+				}, 3000);
+
+			});
+	}
+
+	function timeout(callback, time) {
+		setTimeout(callback, time);
+	}
+
+	//якобы отправляется запрос на сервер
+	function sendRequest(callback) {
+		setTimeout(callback, 2000);
+	}
 
 
 });

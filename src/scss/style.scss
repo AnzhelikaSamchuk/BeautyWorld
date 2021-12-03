@@ -489,18 +489,16 @@ title {
 			border: none;
 			background-color: $color-white;
 
-		&:hover {
-			cursor: pointer;
-			background-color: #f8f6f7;
-			border-radius: 50%;
-		}
+			&:hover {
+				cursor: pointer;
+				background-color: #f8f6f7;
+				border-radius: 50%;
+			}
 		}
 	}
-
 }
 
 .services {
-
 	&__img {
 		width: 100%;
 		border-radius: 8px;
@@ -782,13 +780,13 @@ title {
 		font-size: 18px;
 		line-height: 14px;
 		font-weight: 600;
-		margin-bottom: 15px;
+		margin: 0 auto 15px 0;
 	}
 
 	&__subtitle {
 		font-size: 14px;
 		line-height: 20px;
-		margin-bottom: 35px;
+		margin: 0 auto 35px 0;
 	}
 
 	&__form {
@@ -804,7 +802,8 @@ title {
 	}
 }
 
-input {
+input,
+select {
 	max-width: 375px;
 	width: 100%;
 	border-radius: 4px;
@@ -816,6 +815,30 @@ input {
 	color: #a0a0a0;
 	text-overflow: ellipsis;
 }
+
+/*Убираю голубой фон при автозаполнении*/
+input:-webkit-autofill,
+input:focus:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 100px $color-white inset;
+}
+
+select {
+	margin-bottom: 20px;
+}
+
+.loader {
+	display: none;
+	margin: 16px auto 0 auto;
+	text-align: center;
+}
+
+.success {
+	display: none;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 15px auto 0 0;
+}
+
 
 /*Footer*/
 .footer {

@@ -62,11 +62,74 @@
 							<p class="fast-recording__subtitle">Наш менеджер перезвонит в течение нескольких <br> минут,
 								уточнит подробности и согласует время.
 							</p>
-							<form id="form2">
+							<form id="form-extended">
 								<input type="text" name="name" placeholder="Ваше имя" class="fast-recording__form" required>
 								<input id="phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__"
 									class="fast-recording__form" required>
+								<label>
+									<p class="fast-recording__title">Выберите мастера:</p>
+									<select name="masters">
+										<option value="">Не выбрано</option>
+										<option value="Краснова Ирина">Краснова Ирина</option>
+										<option value="Калилова Жанна">Калилова Жанна</option>
+										<option value="Киселева Алина">Киселева Алина</option>
+										<option value="Иванова Елена">Иванова Елена</option>
+									</select>
+								</label>
+								<label>
+									<p class="fast-recording__title">Выберите услугу:</p>
+									<select name="benefit">
+										<option value="">Не выбрано</option>
+										<optgroup label="Стрижка и укладка">
+											<option value="Женская стрижка">Женская стрижка</option>
+											<option value="Мужская стрижка">Мужская стрижка</option>
+											<option value="Укладка дневная">Укладка дневная</option>
+											<option value="Экспресс укладка">Экспресс укладка</option>
+										</optgroup>
+										<optgroup label="Косметология">
+											<option value="Миндальный пилинг, 90 мин">Миндальный пилинг, 90 мин</option>
+											<option value="Механическая чистка">Механическая чистка</option>
+										</optgroup>
+										<optgroup label="Маникюр и педикюр">
+											<option value="Комбинированный маникюр">Комбинированный маникюр</option>
+											<option value="Маникюр + покрытие гель-лак (френч)">Маникюр + покрытие гель-лак (френч)</option>
+										</optgroup>
+										<optgroup label="Макияж">
+											<option value="Nude">Nude</option>
+											<option value="Вечерний макияж">Вечерний макияж</option>
+										</optgroup>
+										<optgroup label="Брови и ресницы">
+											<option value="Оформление и окрашивание бровей краской">Оформление и окрашивание бровей краской</option>
+											<option value="Ламинирование бровей">Ламинирование бровей</option>
+										</optgroup>
+										<optgroup label="Массаж">
+											<option value="Тайский массаж">Тайский массаж</option>
+											<option value="Расслабляющий массаж">Расслабляющий массаж</option>
+										</optgroup>
+									</select>
+								</label>
+								<p class="fast-recording__title">Дата визита:</p>
+								<input type="date" name="date" class="fast-recording__form">
 								<button type="submit" class="btn btn__form">Записаться</button>
+								<div id="loader-extended" class="loader loader--style1" title="0">
+									<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+									<path opacity="0.2" fill="#fb9475" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+									  s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+									  c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+									<path fill="#fb9475" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+									  C22.32,8.481,24.301,9.057,26.013,10.047z">
+									  <animateTransform attributeType="xml"
+										 attributeName="transform"
+										 type="rotate"
+										 from="0 20 20"
+										 to="360 20 20"
+										 dur="0.5s"
+										 repeatCount="indefinite"/>
+									  </path>
+									</svg>
+								 </div>
+								 <p id="success-extended" class="success">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.</p>
 							</form>
 							<p class="fast-recording__text">Нажимая на кнопку вы соглашаетесь <a href="#" target="_blank"> с
 									обработкой <br> персональных данных</a></p>
@@ -162,7 +225,7 @@
 									<img class="services__img" src="./images/services.jpg" alt="">
 									<h3 class="services__title">Маникюр</h3>
 									<p class="services__subtitle">Аппаратный, комбинированный или классический.</p>
-									<button class="btn services__btn">Записаться</button>
+									<button data-fancybox data-src="#form-header" class="btn services__btn">Записаться</button>
 								</div>
 							</div>
 							<div class="col-xl-4 col-md-6 col-sm-6 col-12">
@@ -172,7 +235,7 @@
 									<p class="services__subtitle">Гель-лак наносится в несколько слоев с <br> использование базы
 										и
 										топа. Каждый слой <br> полимеризуется в LED-лампе.</p>
-									<button class="btn services__btn">Записаться</button>
+									<button data-fancybox data-src="#form-header" class="btn services__btn">Записаться</button>
 								</div>
 							</div>
 							<div class="col-xl-4 col-md-6 col-sm-6 col-12">
@@ -182,7 +245,7 @@
 									<p class="services__subtitle">Выполняется в одноразовых перчатках наполненных <br>
 										увлажняющим
 										лосьоном.</p>
-									<button class="btn services__btn">Записаться</button>
+									<button data-fancybox data-src="#form-header" class="btn services__btn">Записаться</button>
 								</div>
 							</div>
 							<div class="col-xl-4 col-md-6 col-sm-6 col-12">
@@ -190,7 +253,7 @@
 									<img class="services__img" src="./images/services.jpg" alt="">
 									<h3 class="services__title">Педикюр</h3>
 									<p class="services__subtitle">Аппаратный, комбинированный или классический.</p>
-									<button class="btn services__btn">Записаться</button>
+									<button data-fancybox data-src="#form-header" class="btn services__btn">Записаться</button>
 								</div>
 							</div>
 							<div class="col-xl-4 col-md-6 col-sm-6 col-12">
@@ -199,7 +262,7 @@
 									<h3 class="services__title">Парафинотерапия</h3>
 									<p class="services__subtitle">Благодаря этой процедуре увлажнение кожи <br> увеличивается на
 										80%, также выводит токсины и <br> укрепляет суставы.</p>
-									<button class="btn services__btn">Записаться</button>
+									<button data-fancybox data-src="#form-header" class="btn services__btn">Записаться</button>
 								</div>
 							</div>
 						</div>
@@ -554,7 +617,7 @@
 								<div class="masters">
 									<div class="beauty-video beauty-video_masters"
 										style="background-image: url('./images/irina.jpg')">
-										<a href="/" class="beauty-video__action beauty-video__action_masters">Записаться <br> к
+										<a data-fancybox data-src="#form-header" href="/" class="beauty-video__action beauty-video__action_masters">Записаться <br> к
 											мастеру</a>
 									</div>
 									<div class="masters__text">
@@ -569,7 +632,7 @@
 								<div class="masters">
 									<div class="beauty-video beauty-video_masters"
 										style="background-image: url('./images/zhanna.jpg')">
-										<a href="/" class="beauty-video__action beauty-video__action_masters">Записаться <br> к
+										<a data-fancybox data-src="#form-header" href="/" class="beauty-video__action beauty-video__action_masters">Записаться <br> к
 											мастеру</a>
 									</div>
 									<div class="masters__text">
@@ -584,7 +647,7 @@
 								<div class="masters">
 									<div class="beauty-video beauty-video_masters"
 										style="background-image: url('./images/alina.jpg')">
-										<a href="/" class="beauty-video__action beauty-video__action_masters">Записаться <br> к
+										<a data-fancybox data-src="#form-header" href="/" class="beauty-video__action beauty-video__action_masters">Записаться <br> к
 											мастеру</a>
 									</div>
 									<div class="masters__text">
@@ -599,7 +662,7 @@
 								<div class="masters">
 									<div class="beauty-video beauty-video_masters"
 										style="background-image: url('./images/elena.jpg')">
-										<a href="/" class="beauty-video__action beauty-video__action_masters">Записаться <br> к
+										<a data-fancybox data-src="#form-header" href="/" class="beauty-video__action beauty-video__action_masters">Записаться <br> к
 											мастеру</a>
 									</div>
 									<div class="masters__text">
@@ -695,11 +758,30 @@
 							<p class="fast-recording__subtitle">Наш менеджер перезвонит в течение нескольких <br> минут,
 								уточнит подробности и согласует время.
 							</p>
-							<form id="form">
+							<form id="form-contact">
 								<input type="text" name="name" placeholder="Ваше имя" class="fast-recording__form" required>
 								<input id="phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__"
 									class="fast-recording__form" required>
 								<button type="submit" class="btn btn__form">Записаться</button>
+								<div id="loader-contact" class="loader loader--style1" title="0">
+									<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+									<path opacity="0.2" fill="#fb9475" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+									  s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+									  c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+									<path fill="#fb9475" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+									  C22.32,8.481,24.301,9.057,26.013,10.047z">
+									  <animateTransform attributeType="xml"
+										 attributeName="transform"
+										 type="rotate"
+										 from="0 20 20"
+										 to="360 20 20"
+										 dur="0.5s"
+										 repeatCount="indefinite"/>
+									  </path>
+									</svg>
+								 </div>
+								 <p id="success-contact" class="success">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.</p>
 							</form>
 							<p class="fast-recording__text">Нажимая на кнопку вы соглашаетесь <a href="#" target="_blank"> с
 									обработкой <br> персональных данных</a></p>
@@ -730,11 +812,7 @@
 	</div>
 
 	<!--Скрипты js-->
-
-	<script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>
-
-
-
+	<!--<script src="https://rawgit.com/RobinHerbots/Inputmask/5.x/dist/jquery.inputmask.js"></script>-->
 
 	<!--<script src="./js/main.js" type="module"></script>-->
 	<script src="./js/main.min.js"></script>
