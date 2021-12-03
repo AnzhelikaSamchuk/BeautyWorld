@@ -15,7 +15,7 @@ const DIST_PATH = 'dist';
 const PATHS = {
 	scss: `${SRC_PATH}/scss/**/*.scss`,
 	html: `${SRC_PATH}/**/*.html`,
-	js: `${SRC_PATH}/js/main.js`,
+	js: `${SRC_PATH}/js/index.js`,
 	images: `${SRC_PATH}/images/**/*.*`
 };
 

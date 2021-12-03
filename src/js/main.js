@@ -1,11 +1,9 @@
 import $ from 'jquery';
-import 'slick-carousel';
-import 'inputmask';
-import { Fancybox } from "@fancyapps/ui";
-
 import { TabsManager } from './tabs.js';
+import { OrderForm } from './forms/order-form.js';
 
-$(document).ready(function () {
+function init() {
+
 	/*Мобильное меню*/
 	humb.addEventListener('click', () => {
 		mobileMenu.classList.add('visible');
@@ -98,19 +96,23 @@ $(document).ready(function () {
 	const loaderExtended = document.getElementById('loader-extended');
 	const successExtended = document.getElementById('success-extended');
 
+	const form = new OrderForm();
+
 	formConntact.addEventListener('submit', event => {
 		event.preventDefault();
 
-		changedForm(event, loaderContact, successContact, formConntact);
+		//changedForm(event, loaderContact, successContact, formConntact);
+		form.changedForm(event, loaderContact, successContact, formConntact);
 	});
 
 	formExtended.addEventListener('submit', event => {
 		event.preventDefault();
 
-		changedForm(event, loaderExtended, successExtended, formExtended);
+		//changedForm(event, loaderExtended, successExtended, formExtended);
+		form.changedForm(event, loaderExtended, successExtended, formExtended);
 	});
 
-	function changedForm(event, loader, success, form) {
+	/*function changedForm(event, loader, success, form) {
 		const formData = Array
 			.from(event.target.elements)
 			.filter(el => el.name)
@@ -141,7 +143,7 @@ $(document).ready(function () {
 	//якобы отправляется запрос на сервер
 	function sendRequest(callback) {
 		setTimeout(callback, 2000);
-	}
+	}*/
+}
 
-
-});
+$(document).ready(init);
