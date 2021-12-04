@@ -12,24 +12,24 @@ export class OrderForm {
 		console.log(formData);
 
 		loader.style.display = 'block';
-		this.sendRequest(() => {
+		this._sendRequest(() => {
 			//после того как получили ответ блокируем лоадер
 			loader.style.display = 'none';
 			form.reset(); //сброс формы
 			success.style.display = 'block';
-			this.timeout(() => {
+			this._timeout(() => {
 				success.style.display = 'none';
 			}, 3000);
 
 		});
 	}
 
-	timeout(callback, time) {
+	_timeout(callback, time) {
 		setTimeout(callback, time);
 	}
 
 	//якобы отправляется запрос на сервер
-	sendRequest(callback) {
+	_sendRequest(callback) {
 		setTimeout(callback, 2000);
 	}
 }
