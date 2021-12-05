@@ -11,6 +11,10 @@ export class OrderForm {
 
 		console.log(formData);
 
+		/*fetch(`http://localhost:3001/api/customers?fullName`)
+		//информация об ответе, статус, заголовки и данные и распаковываем методом json
+		.then(response => response.json());//ворачивается данные*/
+
 		loader.style.display = 'block';
 		this._sendRequest(() => {
 			//после того как получили ответ блокируем лоадер
