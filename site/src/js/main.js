@@ -85,7 +85,61 @@ function init() {
 	const tabs = new TabsManager(document.getElementById('pricetabs'));
 
 	/*Форма - inputmask*/
+	/*const selector = document.getElementById('phone');
+
+	const im = new Inputmask("+7 (999) 999-9999");
+	im.mask(selector);*/
 	//$('#phone').inputmask({"mask": "+7 (999) 999-9999"});
+
+	$("#form-contact").validate({
+		rules: {
+			name: {
+				required: true,
+				minlength: 2
+			},
+			phone: {
+				required: true,
+				maxlength: 11,
+				minlength: 11
+			}
+		},
+		messages: {
+			name: {
+				required: "Поле 'Ваше Имя' обязательно к заполнению",
+				minlength: "Введите не менее 2-х символов в поле 'Ваше Имя'"
+			},
+			phone: {
+				required: "Поле 'телефон' обязательно к заполнению",
+				minlength: "Введите не менее 11-х символов в поле 'Телефон'",
+				maxlength: "Введите не более 11-х символов в поле 'Телефон'"
+			}
+		}
+	});
+
+	$("#form-extended").validate({
+		rules: {
+			name: {
+				required: true,
+				minlength: 2
+			},
+			phone: {
+				required: true,
+				maxlength: 11,
+				minlength: 11
+			}
+		},
+		messages: {
+			name: {
+				required: "Поле 'Ваше Имя' обязательно к заполнению",
+				minlength: "Введите не менее 2-х символов в поле 'Ваше Имя'"
+			},
+			phone: {
+				required: "Поле 'телефон' обязательно к заполнению",
+				minlength: "Введите не менее 11-х символов в поле 'Телефон'",
+				maxlength: "Введите не более 11-х символов в поле 'Телефон'"
+			}
+		}
+	});
 
 	/*Форма*/
 	const formConntact = document.getElementById('form-contact');
@@ -101,49 +155,19 @@ function init() {
 	formConntact.addEventListener('submit', event => {
 		event.preventDefault();
 
-		//changedForm(event, loaderContact, successContact, formConntact);
-		form.changedForm(event, loaderContact, successContact, formConntact);
+		if ($("#form-contact").valid()) {
+			form.changedForm(event, loaderContact, successContact, formConntact);
+		}
 	});
 
 	formExtended.addEventListener('submit', event => {
 		event.preventDefault();
 
-		//changedForm(event, loaderExtended, successExtended, formExtended);
-		form.changedForm(event, loaderExtended, successExtended, formExtended);
+		if ($("#form-extended").valid()) {
+			form.changedForm(event, loaderExtended, successExtended, formExtended);
+		}
 	});
 
-	/*function changedForm(event, loader, success, form) {
-		const formData = Array
-			.from(event.target.elements)
-			.filter(el => el.name)
-			.map(el => {
-			const {value, name} = el;
-			return { [name] : value};
-			});
-
-		console.log(formData);
-
-		loader.style.display = 'block';
-			sendRequest(() => {
-				//после того как получили ответ блокируем лоадер
-				loader.style.display = 'none';
-				form.reset(); //сброс формы
-				success.style.display = 'block';
-				timeout(() => {
-					success.style.display = 'none';
-				}, 3000);
-
-			});
-	}
-
-	function timeout(callback, time) {
-		setTimeout(callback, time);
-	}
-
-	//якобы отправляется запрос на сервер
-	function sendRequest(callback) {
-		setTimeout(callback, 2000);
-	}*/
 }
 
 $(document).ready(init);
