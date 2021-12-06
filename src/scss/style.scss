@@ -69,6 +69,26 @@ body,
 	justify-content: center;
 }
 
+.mobile-menu {
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: auto;
+	width: 100%;
+	height: 100vh;
+	transition: 0.15s;
+	transform: translateX(-100%);
+	z-index: 1000;
+}
+
+.mobile-menu.visible {
+	transform: translateX(0);
+}
+
+#closeHumb {
+	margin-left: 12px;
+}
+
 .header__top .logo {
 	color: $color-grey;
 	font-weight: bold;
@@ -104,18 +124,14 @@ body,
 		text-align: right;
 	}
 
-	& a {
-		color: $color-grey;
-		text-decoration: none;
-	}
-
 	&__text {
 		position: absolute;
 		display: inline-block;
 		width: 100%;
 		font-size: 11px;
 		text-align: right;
-		padding: 22px 0 0 0;
+		padding: 0;
+		margin-top: 22px;
 	}
 }
 
@@ -157,7 +173,9 @@ body,
 		ul {
 			padding: 0;
 			list-style: none;
+			margin-top: 0;
 			margin-bottom: 0;
+			display: block;
 		}
 
 		li:not(:last-child) {
@@ -227,6 +245,11 @@ title {
 		justify-content: space-between;
 	}
 
+	&__toptitle {
+		max-width: 570px;
+		width: 100%;
+	}
+
 	&__subtitle {
 		margin: 0;
 		padding-bottom: 16px;
@@ -249,6 +272,7 @@ title {
 
 	button:hover {
 		color: darken($color-blue, 20%);
+		cursor: pointer;
 	}
 }
 
@@ -292,6 +316,80 @@ title {
 		padding-top: 75px;
 		transition: 0.15s transform;
 	}
+
+	/*Masters*/
+
+	&_masters::before {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	&_masters {
+		width: 255px;
+		height: 300px;
+		margin-bottom: 20px;
+	}
+
+	&__action_masters {
+		font-size: 16px;
+		visibility: hidden;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		padding-top: 50%;
+		text-align: center;
+	}
+
+	&:hover .beauty-video__action_masters {
+		visibility: visible;
+		opacity: 1;
+		transform: scale(1.1);
+		transition: 0.5s transform;
+
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	& a {
+		text-decoration: none;
+		color: $color-white;
+		transition: 0.5s;
+	}
+
+	/*our works*/
+	&_ourworks::before {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	&_ourworks {
+		width: 338px;
+		height: 338px;
+		margin: 40px 9px 17px 9px;
+		transition: 0.5s transform;
+	}
+
+	&__action_ourworks {
+		font-size: 14px;
+		text-align: center;
+		visibility: hidden;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		padding-top: 55%;
+		position: relative;
+	}
+
+	&_ourworks:hover {
+		transform: scale(1.06);
+		transition: 0.5s transform;
+	}
+
+	&:hover .beauty-video__action_ourworks {
+		visibility: visible;
+		opacity: 1;
+		content: "";
+		position: absolute;
+
+		background: rgba(0, 0, 0, 0.5);
+	}
 }
 
 /*Benefits*/
@@ -325,12 +423,13 @@ title {
 
 /*Services*/
 
-.section + .section__gray, .section__gray_contact {
+.section + .section__gray,
+.section__gray_contact {
 	margin-top: 50px;
 }
 
 .section + .section__gray {
-margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .section {
@@ -338,31 +437,23 @@ margin-bottom: 50px;
 
 	/*Services*/
 
-	&__services {
-		margin-top: -40px;
-	}
-
 	&__header {
 		font-weight: bold;
+		font-size: 48px;
+	}
+
+	&__header_big {
+		font-size: 48px;
+		margin-bottom: 32px;
+	}
+
+	&__header_paginator {
 		font-size: 48px;
 	}
 
 	&__header_small {
 		font-size: 36px;
 		margin-bottom: 35px;
-	}
-
-	/*Price*/
-
-	&__ben-price {
-		max-width: 1015px;
-		width: 100%;
-		margin-top: -32px;
-	}
-
-	/*Masters*/
-	&__masters {
-		margin-top: -40px;
 	}
 
 	&__gray {
@@ -375,23 +466,40 @@ margin-bottom: 50px;
 		padding: 40px 0 40px;
 	}
 
-	&__header_big {
-		font-size: 48px;
-		margin-bottom: 32px;
-	}
-
-	&__header_paginator {
-		font-size: 48px;
-	}
+	/*Our works*/
 
 	&__title {
-		font-size: 16px;
-		margin-bottom: 24px;
+		margin-bottom: 50px;
+		display: flex;
+		justify-content: space-between;
 	}
+
+	&__tools {
+		margin-top: 23px;
+		width: 96px;
+		height: 40px;
+		display: flex;
+		justify-content: space-between;
+
+		&_btn {
+			width: 40px;
+			height: 40px;
+			background-repeat: no-repeat;
+			background-position: center;
+			border: none;
+			background-color: $color-white;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #f8f6f7;
+			border-radius: 50%;
+		}
+		}
+	}
+
 }
 
 .services {
-	margin-top: 40px;
 
 	&__img {
 		width: 100%;
@@ -421,12 +529,35 @@ margin-bottom: 50px;
 
 /*Price*/
 
+.price-wrapper {
+	margin-top: -32px;
+
+	/*max-width: 1015px;
+		width: 100%;
+		display: none;
+
+		&.active {
+			display: block;
+		}*/
+
+	& > div {
+		margin-top: 32px;
+	}
+}
+
+.navigation {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
 .navigation_price {
 	max-width: 794px;
 	margin-bottom: 47px;
-}
-
-.navigation_price ul {
 	justify-content: flex-start;
 }
 
@@ -436,16 +567,27 @@ margin-bottom: 50px;
 }
 
 .prices {
-	max-width: 444px;
-	width: 100%;
-	margin: 32px 0 0 0;
-	display: flex;
-	justify-content: space-between;
+	&__item {
+		max-width: 1015px;
+		width: 100%;
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	&__content {
+		max-width: 444px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
 
 	&__title {
 		font-weight: 500;
 		font-size: 18px;
-		margin-bottom: 8px;
+		margin: 0 0 18px;
 	}
 
 	&__subtitle {
@@ -461,47 +603,28 @@ margin-bottom: 50px;
 		white-space: nowrap; /*чтобы текст не переносился для последней цены*/
 		color: $color-green;
 	}
+
+	&__block {
+		word-wrap: break-word;
+	}
 }
 
 /*Masters*/
 
-.masters {
-	margin-top: 40px;
+.masters-wrapper {
+	margin-top: -40px;
+
+	& > div {
+		margin-top: 40px;
+	}
 }
 
-.beauty-video_masters::before {
-	background: rgba(0, 0, 0, 0);
-}
-
-.beauty-video_masters {
-	width: 255px;
-	height: 300px;
-	margin-bottom: 20px;
-}
-
-.beauty-video__action_masters {
-	font-size: 16px;
-	visibility: hidden;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	padding-top: 50%;
-	text-align: center;
-}
-
-.beauty-video:hover .beauty-video__action_masters {
-	visibility: visible;
-	opacity: 1;
-	transform: scale(1.1);
-	transition: 0.5s transform;
-
-	background: rgba(0, 0, 0, 0.5)
-}
-
-.beauty-video a {
-	text-decoration: none;
-	color: $color-white;
-	transition: 0.5s;
+.masters-section {
+	&__title {
+		font-size: 16px;
+		margin: 0 auto 24px 0;
+		font-weight: 400;
+	}
 }
 
 .masters {
@@ -525,83 +648,24 @@ margin-bottom: 50px;
 }
 
 /*Our works*/
+.btn-prev {
+	background-image: url("/images/left.svg");
+}
 
-.header-paginator {
-	margin-bottom: 50px;
-	display: flex;
-	justify-content: space-between;
-
-	&__pag {
-		margin-top: 23px;
-		width: 96px;
-		height: 40px;
-		display: flex;
-		justify-content: space-between;
-	}
-
-	&__pag_btn {
-		width: 40px;
-		height: 40px;
-		background-repeat: no-repeat;
-		background-position: center;
-
-		&:hover {
-			cursor: pointer;
-			background-color: #f8f6f7;
-			border-radius: 50%;
-		}
-	}
+.btn-next {
+	background-image: url("/images/right.svg");
 }
 
 .ourworks {
 	max-width: 1440px;
 	width: 100%;
 	margin: -40px auto 17px auto;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-}
-
-.beauty-video_ourworks::before {
-	background: rgba(0, 0, 0, 0);
-}
-
-.beauty-video_ourworks {
-	width: 338px;
-	height: 338px;
-	margin-top: 40px;
-	transition: 0.5s transform;
-}
-
-.beauty-video__action_ourworks {
-	font-size: 14px;
-	text-align: center;
-	visibility: hidden;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	padding-top: 55%;
-	position: relative;
-}
-
-.beauty-video_ourworks:hover {
-	transform: scale(1.1);
-	transition: 0.5s transform;
-}
-
-.beauty-video:hover .beauty-video__action_ourworks {
-	visibility: visible;
-	opacity: 1;
-	content: "";
-	position: absolute;
-
-	background: rgba(0, 0, 0, 0.5)
+	overflow: visible;
 }
 
 /*Brends*/
 
 .brends {
-
 	&__title {
 		font-size: 16px;
 		text-align: center;
@@ -647,7 +711,9 @@ margin-bottom: 50px;
 	}
 
 	&_phone {
+		display: block;
 		line-height: 14px;
+		margin-bottom: 20px;
 	}
 
 	a {
@@ -689,8 +755,8 @@ margin-bottom: 50px;
 		}
 
 		&_horizontal {
-			padding-right: 128px;
-			margin-top: -128px;
+			margin-left: 50px;
+			margin-top: -80px;
 			transform: rotate(-90deg);
 		}
 
@@ -733,6 +799,7 @@ margin-bottom: 50px;
 	&__text {
 		font-size: 12px;
 		font-weight: 300;
+		margin-top: 16px;
 		margin-bottom: 0;
 	}
 }
@@ -748,10 +815,6 @@ input {
 	line-height: 14px;
 	color: #a0a0a0;
 	text-overflow: ellipsis;
-}
-
-form {
-	margin-bottom: 16px;
 }
 
 /*Footer*/
@@ -797,4 +860,12 @@ form {
 	.navigation_footer li {
 		margin-right: 28px;
 	}
+}
+
+/*Убираю подсветку на элементах*/
+:active,
+:hover,
+:focus {
+	outline: 0;
+	outline-offset: 0;
 }

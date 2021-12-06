@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	color: $color-grey;
+	color: color-grey;
 	font: $main-font;
 	font-weight: 400; /*Regular*/
 	min-width: 320px; /*Для адаптивности*/
@@ -47,6 +47,13 @@ body {
 	}
 }
 
+#navigation-humb ul {
+	margin: 30px auto 10px 12px;
+	justify-content: start;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
 .navigation {
 	max-width: 495px;
 }
@@ -68,11 +75,13 @@ body {
 .navigation li a:hover {
 	color: $color-green;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .navigation a {
 	color: $color-grey;
 	text-decoration: none;
-	font-weight: 500; /*Medium*/
+	font-weight: 500;
 	font-size: 14px;
 }
+

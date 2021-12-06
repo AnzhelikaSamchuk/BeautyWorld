@@ -22,8 +22,11 @@
 		display: none;
 	}
 
-	.navigation {
-		max-width: 370px;
+	.prices ul {
+		display: flex;
+		flex-wrap: nowrap;
+		white-space: nowrap;
+		overflow: auto;
 	}
 
 	.about {
@@ -32,20 +35,25 @@
 		}
 
 		&__toptitle {
-			margin-bottom: 20px;
+			margin: 0 auto 20px;
 			text-align: center;
 		}
 	}
 
 	.beauty-video {
 		margin: 0 auto;
+
+		&_ourworks {
+			margin: 40px 9px 17px;
+		}
 	}
+
 }
 
 @media only screen and (max-width: 768px) {
 	.navigation_header,
 	.header__girl {
-		display: none;
+		display: none !important;
 	}
 
 	.humb {
@@ -61,7 +69,7 @@
 			top: 100%;
 			margin-top: 0;
 			left: 50%;
-			margin-left: -16px;
+			margin-left: -20px;
 			transform: rotate(-90deg);
 		}
 
