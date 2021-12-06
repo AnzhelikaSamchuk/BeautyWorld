@@ -13,21 +13,16 @@ function init() {
 		mobileMenu.classList.remove('visible');
 	});
 
-	const navigationsHumb = document.querySelectorAll('#navigation-humb');
-	for (let link of navigationsHumb) {
-		link.addEventListener('click', event => {
-			console.log('click');
+	const navigationsHumb = document.getElementById('navigation-humb');
+	navigationsHumb.addEventListener('click', event => {
+		event.preventDefault();
+		const isTabLink = event.target.classList.contains('smooth-scroll');
+
+		if (isTabLink)
 			mobileMenu.classList.remove('visible');
-		})
-	}
-
-	/*Плавный скролл*/
-	const navigation = document.querySelector('.navigation');
-
-	document.addEventListener('scroll', event => {
-		console.log(event.target.scrollTop)
 	});
 
+	/*Плавный скролл*/
 	const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
 
 	for (let link of smoothScrollLinks) {
