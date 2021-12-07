@@ -68,48 +68,48 @@
 									class="fast-recording__form" required>
 								<label>
 									<p class="fast-recording__title">Выберите мастера:</p>
-									<select name="masters">
-										<option value="">Не выбрано</option>
-										<option value="Краснова Ирина">Краснова Ирина</option>
-										<option value="Калилова Жанна">Калилова Жанна</option>
-										<option value="Киселева Алина">Киселева Алина</option>
-										<option value="Иванова Елена">Иванова Елена</option>
+									<select type="number" name="masterId">
+										<option value="0">Не выбрано</option>
+										<option value="1">Краснова Ирина</option>
+										<option value="2">Калилова Жанна</option>
+										<option value="3">Киселева Алина</option>
+										<option value="4">Иванова Елена</option>
 									</select>
 								</label>
 								<label>
 									<p class="fast-recording__title">Выберите услугу:</p>
-									<select name="benefit">
-										<option value="">Не выбрано</option>
+									<select type="number" name="serviceId">
+										<option value="0">Не выбрано</option>
 										<optgroup label="Стрижка и укладка">
-											<option value="Женская стрижка">Женская стрижка</option>
-											<option value="Мужская стрижка">Мужская стрижка</option>
-											<option value="Укладка дневная">Укладка дневная</option>
-											<option value="Экспресс укладка">Экспресс укладка</option>
+											<option value="1">Женская стрижка</option>
+											<option value="2">Мужская стрижка</option>
+											<option value="3">Укладка дневная</option>
+											<option value="4">Экспресс укладка</option>
 										</optgroup>
 										<optgroup label="Косметология">
-											<option value="Миндальный пилинг, 90 мин">Миндальный пилинг, 90 мин</option>
-											<option value="Механическая чистка">Механическая чистка</option>
+											<option value="5">Миндальный пилинг, 90 мин</option>
+											<option value="6">Механическая чистка</option>
 										</optgroup>
 										<optgroup label="Маникюр и педикюр">
-											<option value="Комбинированный маникюр">Комбинированный маникюр</option>
-											<option value="Маникюр + покрытие гель-лак (френч)">Маникюр + покрытие гель-лак (френч)</option>
+											<option value="7">Комбинированный маникюр</option>
+											<option value="8">Маникюр + покрытие гель-лак (френч)</option>
 										</optgroup>
 										<optgroup label="Макияж">
-											<option value="Nude">Nude</option>
-											<option value="Вечерний макияж">Вечерний макияж</option>
+											<option value="9">Nude</option>
+											<option value="10">Вечерний макияж</option>
 										</optgroup>
 										<optgroup label="Брови и ресницы">
-											<option value="Оформление и окрашивание бровей краской">Оформление и окрашивание бровей краской</option>
-											<option value="Ламинирование бровей">Ламинирование бровей</option>
+											<option value="11">Оформление и окрашивание бровей краской</option>
+											<option value="12">Ламинирование бровей</option>
 										</optgroup>
 										<optgroup label="Массаж">
-											<option value="Тайский массаж">Тайский массаж</option>
-											<option value="Расслабляющий массаж">Расслабляющий массаж</option>
+											<option value="13">Тайский массаж</option>
+											<option value="14">Расслабляющий массаж</option>
 										</optgroup>
 									</select>
 								</label>
 								<p class="fast-recording__title">Дата визита:</p>
-								<input type="date" name="date" class="fast-recording__form">
+								<input type="date" name="visitDate" class="fast-recording__form">
 								<button type="submit" class="btn btn__form">Записаться</button>
 								<div id="loader-extended" class="loader loader--style1" title="0">
 									<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

@@ -1,39 +1,37 @@
 export class OrderForm {
 
 	async changedForm(event, loader, success, form) {
-		const formData = Array
-			.from(event.target.elements)
-			.filter(el => el.name)
-			.map(el => {
-				const { value, name } = el;
-				return { [name]: value };
-			});
 
-		console.log(formData);
+	const formData = new FormData();
+	Array
+	.from(event.target.elements)
+	.filter(el => el.name)
+	.forEach(el => {
+		const { value, name } = el;
 
-			/*response = await fetch('http://localhost:3001/api/customers?fullName', {
-			method: 'POST',
-			body: formData,
-			headers: {
-				'Content-Type': 'multipart/form-data'
-			}
-		});
+		formData.append(name, value);
+	});
 
-		
-			if (response.ok) {*/
-			loader.style.display = 'block';
-			this._sendRequest(() => {
-			//после того как получили ответ блокируем лоадер
-			loader.style.display = 'none';
-			form.reset(); //сброс формы
-			success.style.display = 'block';
-			this._timeout(() => {
-				success.style.display = 'none';
-			}, 3000);
-		});
-		/*} else {
-			alert("Ошибка HTTP: " + response.status);
-		 }*/
+	for (let item of formData.entries()) {
+		console.log(item);
+	}
+
+	loader.style.display = 'block';
+
+	const response = await fetch('http://localhost:3001/api/orders', {
+		method: 'POST',
+		body: formData
+	});
+
+	if (response.status === 400 || response.ok) {
+		console.log("ok");
+		loader.style.display = 'none';
+		form.reset(); //сброс формы
+		success.style.display = 'block';
+		this._timeout(() => {
+			success.style.display = 'none';
+		}, 3000);
+	}
 
 	}
 
@@ -41,8 +39,4 @@ export class OrderForm {
 		setTimeout(callback, time);
 	}
 
-	//якобы отправляется запрос на сервер
-	_sendRequest(callback) {
-		setTimeout(callback, 2000);
-	}
 }
