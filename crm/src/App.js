@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import { Route, Routes } from "react-router";
+import { MastersPage, LoginPage, NotFoundPage } from './pages';
+import { Navbar } from "./components/NavBar";
+import { AuthProvider } from "./context/AuthContext";
+import ApiService from "./api/api-service";
+import { PrivateRouteLogin, PrivateRouteMain } from "./components/PrivateRoute";
 import './App.css';
 
+//import useEffect from "react";
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	/*useEffect(() => {
+		async function fetch() {
+			const customers = await ApiService.getCustomers();
+			console.log(customers);
+		}
+	fetch();
+	}, []);//без зависимотсей*/
+
+	async function fetch() {
+		const customers = await ApiService.getCustomers();
+		console.log(customers);
+	}
+fetch();
+
+
+	return (
+		<AuthProvider>
+			<div className="App">
+			<Navbar />
+
+			<Routes>
+				<Route path="/" element={
+				<PrivateRouteLogin><MastersPage/></PrivateRouteLogin>
+				} />
+				<Route path="/login" element={
+				<PrivateRouteMain><LoginPage/></PrivateRouteMain>
+				} />
+				{/*NotFound*/}
+				<Route path="*" element={<NotFoundPage/>} />
+			</Routes>
+		</div>
+		</AuthProvider>
+	);
 }
 
 export default App;
