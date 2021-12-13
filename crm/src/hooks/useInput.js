@@ -11,5 +11,5 @@ export function useInput(initialState = '') {
 		setValue(event.target.value);
 	}
 
-	return { value, onChange, setValue };
+	return { value, setValue, onChange };
 }

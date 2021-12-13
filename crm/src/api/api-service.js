@@ -1,4 +1,3 @@
-//По хорошему для каждого контроллера свой API сервис
 import { API_PATH } from '../constants';
 import { HttpService } from '../services/http-service';
 

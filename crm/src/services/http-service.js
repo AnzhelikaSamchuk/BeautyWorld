@@ -1,4 +1,4 @@
-import PubSub from './pubsub';
+import Pubsub from './pubsub';
 import TokenService from './token-service';
 
 //логикаЖ при каждом обращении у нас берется токен и подставляется в bearer
@@ -12,7 +12,7 @@ export class HttpService {
 	get baseHeaders() {
 		return {
 			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${TokenService.getToken()}`//авторизационный токен
+			'Authorization': `Bearer ${TokenService.getToken()}`
 		};
 	}
 
@@ -46,7 +46,7 @@ export class HttpService {
 		if (response.status === 401) {
 			//Pubsub - паттерн, который позволяет подписываться на некие события и уведомлять подписчиков
 			//этими данными и чтобы слушатель обработал событие
-			PubSub.emit('logout');
+			Pubsub.emit('logout');
 		}
 
 		throw parsedData;

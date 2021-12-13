@@ -1,6 +1,8 @@
 import { useInput } from '../hooks/useInput';
+import { UnlockOutlined, UserOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 
-export function AuthForm({ onLogin }) {
+export default function AuthForm({ onLogin }) {
 	const loginInput = useInput();
 	const passwordInput = useInput();
 
@@ -8,6 +10,7 @@ export function AuthForm({ onLogin }) {
 		loginInput.setValue('');
 		passwordInput.setValue('');
 	}
+
 
 	//Обработчик формы, который собирает данные
 	function handleSubmit(e) {
@@ -18,23 +21,23 @@ export function AuthForm({ onLogin }) {
 			password: passwordInput.value
 		};
 
-		onLogin(data);//через пропсы вызывает колбэк и обновляет форму
+		onLogin(data);
 		reset();
 	}
 
 	return (
 		<form onSubmit={handleSubmit}>
 			<label>
-				<span>Логин</span>
-				<input {...loginInput} placeholder="Введите логин" />
+				<UserOutlined />
+				<input {...loginInput} placeholder="Введите логин" style={{ marginBottom: '10px' }} />
 			</label>
 			<br />
 			<label>
-				<span>Пароль</span>
-				<input {...passwordInput} type="password" placeholder="Введите пароль" />
+				<UnlockOutlined />
+				<input {...passwordInput} type="password" placeholder="Введите пароль" style={{ marginBottom: '10px' }} />
 			</label>
 			<br />
-			<button>Войти</button>
+			<Button type="primary" htmlType="submit">Войти</Button>
 		</form>
-	)
+	);
 }

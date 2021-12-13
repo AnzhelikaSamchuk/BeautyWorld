@@ -1,6 +1,6 @@
 import { Fragment, useRef, useState } from "react";
 import { Masters } from "../components/Masters";
-import { MastersContext } from "../context/MastersContext";
+import { MastersContext } from "../contexts/MastersContext";
 import { useInput } from "../hooks/useInput";
 
 function masterFactory(id, fullName = 'Краснова Ирина') {
@@ -9,8 +9,9 @@ function masterFactory(id, fullName = 'Краснова Ирина') {
 		fullName,
 		position: 'Мастер ногтевого сервиса',
 		photo: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/9df59234053606.56c27d7f1e127.jpg'
-	};
+	}
 }
+
 const mastersMockData = [
 	masterFactory(1),
 	masterFactory(2),
@@ -42,7 +43,7 @@ export function MastersPage() {
 
 	return (
 		<Fragment>
-			<h1>MastersPage</h1>
+			<h1>Страница мастеров</h1>
 			{/*Ref'ы */}
 			<form onSubmit={handleForm}>
 				<input ref={inputRef} {...nameInput} placeholder="Введите имя сотрудника" />
