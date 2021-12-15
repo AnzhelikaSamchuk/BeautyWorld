@@ -1,63 +1,94 @@
-import { Fragment } from "react";
-import { Table } from "antd";
-
-const dataSource = [
-	{
-		key: '1',
-		name: 'Mike',
-		age: 32,
-		address: '10 Downing Street',
-	},
-	{
-		key: '2',
-		name: 'John',
-		age: 42,
-		address: '10 Downing Street',
-	},
-];
+import { Fragment, useEffect, useState } from "react";
+import { Space, Table } from "antd";
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import { ApiService } from "../api/api-service";
 
 const columns = [
 	{
-		title: 'id',
-		dataIndex: 'id',
-		key: 'name',
+		 title: 'Имя клиента',
+		 dataIndex: 'customer',
+		 key: 'customer',
 	},
 	{
-		title: 'Age',
-		dataIndex: 'age',
-		key: 'age',
+		 title: 'Номер телефона',
+		 dataIndex: 'phone',
+		 key: 'phone'
 	},
 	{
-		title: 'Address',
-		dataIndex: 'address',
-		key: 'address',
+		 title: 'Имя мастера',
+		 dataIndex: 'master',
+		 key: 'master',
 	},
-];
-
+	{
+		 title: 'Услуга',
+		 dataIndex: 'service',
+		 key: 'service',
+	},
+	{
+		 title: 'Дата визита',
+		 dataIndex: 'visitDate',
+		 key: 'visitDate',
+	},
+	{
+		 title: 'Статус',
+		 dataIndex: 'status',
+		 key: 'status'
+	},
+	{
+		 title: 'Действия',
+		 key: 'action',
+		 render: () => (
+			  <Space size='middle'>
+					<EditOutlined style={{cursor: 'pointer'}} />
+					<DeleteOutlined style={{cursor: 'pointer'}} />
+			  </Space>
+		 )
+	}
+]
 
 export function OrdersPage() {
+	const api = new ApiService();
 
-	/*const [data, setData] = useState([]);
-
+	const [state, setstate] = useState([]);
+	const [loading, setloading] = useState(true);
 	useEffect(() => {
-		async function fetchData() {
-			const response = await fetch('http://localhost:3001/api/customers');
-			const _data = await response.json();
-			setData(_data);
-		}
-		fetchData();
-	}, []);*/
+		getData();
+	}, []);
+
+	const getData = async () => {
+
+		const result = await api.getOrders();
+		setloading(false);
+		console.log(result);
+		setstate(
+			result.map(row => ({
+				id: row.id,
+				customer: row.customer.fullName,
+				phone: row.customer.phone,
+				master: row.master.fullName,
+				service: row.service.name,
+				status: row.status === 'Opened' ? 'Открыта' : 'Закрыта',
+				visitDate: row.visitDate,
+				key: row.id
+			}))
+		);
+	};
+
 
 	return (
 		<Fragment>
 			<h1>Заявки</h1>
 			<div>
-				<Table
-					columns={columns}
-					dataSource={dataSource}
-					pagination={{ pageSize: 50 }}
-					scroll={{ y: 240 }}
-				/>
+				{loading ? (
+					"Loading"
+				) : (
+					<Table
+						columns={columns}
+						dataSource={state}
+						pagination={{ pageSize: 50 }}
+						scroll={{ y: 240 }}
+					/>
+				)}
 			</div>
 		</Fragment>
 	)

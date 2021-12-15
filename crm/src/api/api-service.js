@@ -11,6 +11,10 @@ export class ApiService extends HttpService {
 		return this.get('customers');
 	}
 
+	getOrders() {
+		return this.get('orders');
+	}
+
 	login(authData) {
 		return this.post('login', authData);
 	}
