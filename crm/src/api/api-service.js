@@ -7,12 +7,17 @@ export class ApiService extends HttpService {
 		super(API_PATH);
 	}
 
-	getCustomers() {
-		return this.get('customers');
-	}
-
 	getOrders() {
 		return this.get('orders');
+	}
+
+	getFilterOrders(data) {
+		const query = `orders${data}`;
+		return this.get(query);
+	}
+
+	createOrders(createData) {
+		return this.post('orders', createData);
 	}
 
 	login(authData) {
