@@ -20,10 +20,14 @@ export class ApiService extends HttpService {
 		return this.post('orders', createData);
 	}
 
+	deleteOrders(id) {
+		const query = `orders/${id}`;
+		return this.delete(query);
+	}
+
 	login(authData) {
 		return this.post('login', authData);
 	}
-
 }
 
 export default new ApiService();

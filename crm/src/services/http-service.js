@@ -34,6 +34,15 @@ export class HttpService {
 		return this._handleResponse(response);
 	}
 
+	async delete(path) {
+		await fetch(`${this.baseApi}/${path}`, {
+			method: 'DELETE',
+			headers: this.baseHeaders
+		});
+
+		return
+	}
+
 	//общий для всех методов, распарсивает ответ
 	async _handleResponse(response) {
 		const parsedData = await response.json();
