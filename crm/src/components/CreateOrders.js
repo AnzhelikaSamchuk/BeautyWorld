@@ -6,7 +6,6 @@ import Modal from 'antd/lib/modal/Modal'
 function CreateOrders({ createOrders }) {
 	const [isModalVivible, setIsModalVilible] = useState(false)
 	const [form] = Form.useForm()
-	const [, forceUpdate] = useState({})
 
 	const showModal = () => {
 		setIsModalVilible(true)
@@ -16,10 +15,6 @@ function CreateOrders({ createOrders }) {
 		setIsModalVilible(false)
 		form.resetFields()
 	}
-
-	useEffect(() => {
-		forceUpdate({})
-	}, []);
 
 	function formatInput(input) {
 		const formatObj = {
